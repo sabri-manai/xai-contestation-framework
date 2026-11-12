@@ -1,0 +1,8 @@
+# framework (.venv): experiments, adapters, benchmark builders
+pandas>=2.2
+numpy>=2.0
+scikit-learn>=1.5
+catboost>=1.2
+requests>=2.31
+# paper/evidence.ipynb and the E1 XLM-R baseline additionally need:
+#   matplotlib, jupyter, ipykernel, torch, transformers

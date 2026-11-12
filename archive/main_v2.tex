@@ -1,0 +1,162 @@
+\documentclass[preprint,12pt,3p,times]{elsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\done}[1]{\textcolor{blue}{[DATA: #1]}}   % a number that already exists in the repo
+
+\journal{Journal of Computational Science}
+
+% Skeleton revised 12 Nov 2026 to match framework/architecture.md (same date).
+% \done{} marks claims whose numbers exist in the repo (data/, benchmark/outputs/); \todo{} marks open work.
+
+\begin{document}
+
+\begin{frontmatter}
+
+% Must differ from the ICCS-2026 conference title. Alternatives:
+%   "Calibrated Yielding: When Should an Explanation System Give In to the User?"
+%   "Neither Sycophantic nor Stubborn: Verifiability-Based Adjudication of User Contestation in XAI"
+\title{When Should an AI Yield? Calibrated Responses to User Contestation of Explanations under Detection Uncertainty}
+
+\author[uj]{Sabri Manai\corref{cor1}}
+\ead{sabri.manai@doctoral.uj.edu.pl}
+\author[uj]{Szymon Bobek}
+\author[uj]{Grzegorz J. Nalepa}
+\cortext[cor1]{Corresponding author}
+\address[uj]{Jagiellonian University, Krak{\'o}w, Poland}
+
+\begin{abstract}
+\todo{Problem: once a user contests an explanation, the system must decide whether to yield. Existing systems always give the same answer. Classic XAI ignores the user and LLM assistants almost always give in, even when the user is wrong (sycophancy). None of them checks whether the objection is valid or whether the detection was a false alarm.}
+\todo{Thesis: the response should depend on whether the user's grounds can be checked. A decision model that sees the verification result yields when it should, holds when it should, and asks when unsure.}
+\todo{Resource: 258 further think-aloud episodes labelled by four independent coders under a two-gate codebook (dispute vs explanation request), and the first benchmark with validity labels: natural episodes, matched right/wrong pairs, and operator objections whose validity is settled by retraining.}
+\todo{Results: a zero-shot decision model detects disputes and requests better than trained classifiers (E1); decision models tell right objections from wrong ones where LLM assistants do not (E2--E3); asking pays when about half the flags are false alarms (E4); the policy runs inside a conversational hyperparameter-optimisation tool with an objective oracle (E5).}
+% Special issue (JoCS, after ICCS 2026): invited extension, at least 40% new work with new results.
+% Submission 15 Nov 2026, decision 15 Jan 2027, publication May 2027.
+This paper is an extended version of our ICCS 2026 conference paper~\cite{manai2026orders}. Its counterfactual guidance layer for hyperparameter optimisation is the application in which the contestation-response mechanism is built and tested, with retraining deciding whether an objection is right.
+\end{abstract}
+
+\begin{keyword}
+explainable AI \sep contestation \sep sycophancy \sep decision models \sep selective prediction \sep human--AI interaction \sep conversational XAI \sep hyperparameter optimisation
+\end{keyword}
+
+\end{frontmatter}
+
+% =====================================================================
+\section{Introduction}
+% =====================================================================
+\todo{Opening: an inspection operator says ``Option B will never reach that quality with a third of the training data.'' A mycology expert says the attribution chart is wrong. What should the system do? Today's systems each give one fixed answer: classic XAI ignores the user, argumentative XAI formalizes the objection or ignores it, and chat assistants give in even when the user is wrong.}
+\todo{The problem: calibrated yielding under two uncertainties. Presence: at a recall-first operating point about half of the detector's flags are false alarms \done{precision 0.45--0.51 vs four-coder labels, recall 0.96--1.00}. Validity: is the objection right or wrong, and can the system even tell? No existing system handles both, and no benchmark measures it.}
+\todo{Thesis in one paragraph: whether the grounds can be checked, not user role or detector confidence, determines the response. User is right: fix it (Revise). User is wrong: keep the answer and show the evidence (Hold). Cannot check: show both sides and say it is unresolved (Surface). The explanation's form failed the user: show it differently (Re-present). Surface is the reject option for dialogue. We test it by giving systems objections where we know who is right and scoring the actions they take.}
+\textbf{Contributions.}
+\begin{enumerate}
+  \item We define the \emph{contestation response problem} as a decision under two kinds of uncertainty, and state the \emph{verifiability principle}: the response depends on whether the system can check the user's grounds, not on who the user is.
+  \item A framework with two parts. A Verify step turns the explanation into explicit claims and checks the user's grounds against the model, the data and the rendering. Decision models then detect contestation and choose the response from the episode, its taxonomy labels, and the verification result, and ask the user when unsure. Four claims: verification is the input that matters, user role adds nothing, asking pays off when detection is noisy, and always yielding only makes sense under costs no one would accept.
+  \item New data: 258 further episodes of the XAI-FUNGI think-aloud corpus labelled by four independent native-speaker coders under a two-gate codebook (dispute / explanation request) with a pre-registered reliability block, aggregated into test labels by a rule fixed before any majority was computed. \done{Fleiss $\kappa$ 0.48 dispute, 0.40 request, 0.49 any push-back; 149 test-standing episodes}
+  \item The \emph{Contested-Explanations Benchmark}: natural episodes with validity labels, matched pairs of right and wrong objections, and operator objections whose validity is confirmed by retraining, with metrics for yield, sycophancy, and discrimination.
+  \item Evidence, from running language models and decision models through the same steps (detect, verify, decide, reply, measure): a zero-shot decision model beats trained detectors on both gates \done{E1}; LLM-based assistants yield to wrong objections and a decision model given the verification result does not, and loses that ability without it \todo{E2, E3}; asking when unsure lowers expected cost at the observed false-alarm rate \todo{E4}; the mechanism runs end to end inside the conversational HPO tool of the conference paper, with the retraining oracle settling who is right \todo{E5}.
+\end{enumerate}
+\todo{Relation to prior work: builds on the contestation definition and taxonomy of~\cite{phase1} and the CF-XHPO conversational layer of~\cite{manai2026orders}. New relative to the ICCS paper (special-issue requirement, list explicitly): Sections 4--7 entirely; the application in Section 5.5 and Part C; the labelled data of Section 3.2. Carried over: the surrogate, the counterfactual generator, the query schema, the retraining confirmation.}
+
+% =====================================================================
+\section{Related Work}
+% =====================================================================
+\subsection{Contestability and contestation in XAI}
+\subsection{Interactive, argumentative, and conversational explanation systems}
+\todo{TalkToModel, InterroLang, CoXQL, argumentative XAI, and what each does on pushback.}
+\subsection{Sycophancy in language-model assistants}
+\todo{Sharma et al.\ and follow-ups. No work measures it for explanation dialogue or ties it to objection validity.}
+\subsection{Reject options, selective prediction, and learning to defer}
+\todo{Chow, Madras et al., Mozannar \& Sontag. Surface differs from them: it defers the resolution, not the decision, and keeps the model's account visible.}
+\subsection{Learned decision models and abstention}
+\todo{Learned policies for dialogue response selection, confidence-based abstention, learned annotators used as labellers. Difference: the gold response is derived from a verifiability rule rather than annotated, and abstention is a dialogue act that keeps both accounts visible.}
+\subsection{Explainable and conversational hyperparameter optimisation}
+\todo{Short: from the ICCS paper and the FGCS submission; what a conversational HPO assistant does today when the operator disagrees (nothing: the parser re-runs the query).}
+
+% =====================================================================
+\section{Background}
+% =====================================================================
+\subsection{Contestation and its taxonomy}
+\todo{Short, cite~\cite{phase1}: definition, five dimensions (one table), R1--R5. Key numbers: 44 of 76 checked episodes contain contestation, across 3 user groups and 5 explanation types; users object to how the explanation is shown 4--5 times more often than to the prediction; TF-IDF and XLM-R detectors with precision $\approx 0.66$. Open point: detection does not say what to do next. Minimal overlap.}
+\subsection{The 258-episode labelled set}  % NEW DATA
+\todo{Codebook v1.1/v1.2: second gate (explanation request), representation rule, sentence unit, ASR cleaning (what and how, originals kept). Sampling: 204 lexicon-flagged + 46 random unflagged, stratified by group $\times$ format, 8 replacements for unintelligible transcripts, 43 excluded as unclear. Four coders, native speakers, independent of the construct's authors; one coded all 258; pre-registered 100-episode reliability block coded by all four. \done{Fleiss $\kappa$ dispute 0.48 (pairwise 0.40--0.56; random half 0.52, flagged half 0.35), request 0.40, any push-back 0.49; coarse grounds (checkable / not) $\alpha$ 0.41.} Aggregation rule fixed before computing: majority = test label; tie = adjudicate (26); single coder (40) reported separately. \done{149 test-standing: 42 disputes, 32 requests, 5 both.} Headline reading: disputes of the prediction are rare; objections to the explanation's account and form are common; most disputes rest on grounds the system cannot check \done{32 of 42 not checkable, 8 checkable, 2 tied}. Lexical filter recall $\approx 0.25$: most contestation is not lexically marked.}
+\subsection{CF-XHPO: the application}
+\todo{From~\cite{manai2026orders} and the FGCS submission: HPO log $\rightarrow$ surrogate $\rightarrow$ counterfactual configurations for a schema-constrained natural-language query $\rightarrow$ template explanation whose every number is copied from the candidate table $\rightarrow$ main-model confirmation by retraining. Why it is the right application: every claim in the explanation is explicit and checkable, and the prediction itself has an objective oracle.}
+
+% =====================================================================
+\section{The Contestation Response Problem}  % NEW
+% =====================================================================
+\subsection{Two uncertainties: presence and validity}
+\todo{Presence from E1's observed operating point; validity from the grounds distribution of Section 3.2.}
+\subsection{Why fixed responses fail}
+\todo{Table: static / argumentative / LLM assistant / learning-to-defer, each with how it fails.}
+\subsection{The verifiability principle}
+\todo{Whether the grounds can be checked is the organizing variable. The response table with five rows: Revise, Hold, Surface, Surface (clarify), Re-present. The cost ordering $C(\mathrm{Revise},\mathrm{invalid}) \gg C(\mathrm{Hold},\mathrm{valid}) > C(\mathrm{Surface},\cdot) \approx C(\mathrm{Re\mbox{-}present},\cdot)$ is the only assumption. Note that in the natural corpus the principle's modal answer is Surface, which is why discrimination is measured on Parts B and C.}
+\subsection{Decision models}
+\todo{Jev (TypeSafe), a System One model served through OpenRouter's Decisions API, pinned to typesafe/jev-1.14. State plus typed questions, typed answers with a probability per option; no text. Three questions: (a) dispute? (a$'$) request? (b) hold / revise / surface. Inputs for (b): episode, taxonomy labels, verification result, role withheld. Existing models benchmarked as they are. Gold for (b) derived from the verifiability table, never annotated. The decision model labels presence only; its structure answers are at chance against gold ($\kappa \le 0.18$) and are used as features.}
+\subsection{Asking when unsure}
+\todo{Confidence gate $\tau$ from held-out precision and the cost ordering. Relation to the reject option. Why nothing else is added.}
+\subsection{Claims}
+\todo{C1 verification is decisive, C2 role adds nothing, C3 asking pays under noise, C4 always yielding only makes sense under costs no one would accept. Short arguments, each checked in Sec.~7.}
+
+% =====================================================================
+\section{Framework}  % NEW
+% =====================================================================
+\subsection{Overview}
+\todo{Figure: detect $\rightarrow$ understand $\rightarrow$ verify $\rightarrow$ decide $\rightarrow$ respond; request-only path to Re-present; Surface loop.}
+\subsection{Detect and understand}
+\todo{Two gates as typed yes/no questions with probabilities. Operating point by rule (lowest threshold with precision $\ge 0.75$ on gold), from the user-side costs. Baselines: Phase 1 detectors and an LLM with the codebook. Understand fills the taxonomy labels at the coarse level the coders agree on.}
+\subsection{Verify: claims and what a system can check}
+\todo{An explanation is a set of claims; a contestation is a claim against one of them. The grounds-to-check table (presentation ambiguity, internal inconsistency, missing evidence, data quality, causal implausibility: checkable; technical and domain knowledge: partly; prior experience: no; the prediction itself: oracle where one exists). The dividing line: a claim about the model, its data or its rendering versus a claim that needs information the model does not have.}
+\subsection{Decide and respond}
+\todo{Decision model on (episode, labels, verification). Confidence below $\tau$ asks. Surface loops back with the user's reply. Replies use only facts the adapter returns.}
+\subsection{Domain adapters and the CF-XHPO application}
+\todo{Five-call interface (state, claims, verify, revise, evidence\_for\_hold). CF-XHPO adapter: state = parsed query, anchors, candidate table, template explanation; claims = score / satisfies / rank / best / tie per option; verify in three tiers (table: exact; log and surrogate: seconds; retraining oracle: 30--120 s per candidate, user right if confirmed F1 contradicts the claim beyond the noise floor); revise re-ranks and marks confirmed scores; Surface for line knowledge; Re-present for terms and units. The oracle bank: 48 confirmed candidates (3 seeds), 96 re-run logged trials, 60 anchor-sweep retrainings from the FGCS revision. XAI-FUNGI adapter: rendered-artefact checks first, feature perturbation second.}
+
+% =====================================================================
+\section{The Contested-Explanations Benchmark}  % NEW
+% =====================================================================
+\subsection{Part A: natural episodes with validity labels}
+\todo{Gold (76, v1.0, two tiers; all numbers on A+B) and the 258 (Section 3.2). Validity annotated only over the checkable disputes \done{8 + 2 tied}; uncheckable disputes are Surface by derivation; requests and ``neither'' episodes are the routing and false-alarm probes. Gold response derived, not annotated, which avoids the Phase 1 circularity.}
+\subsection{Part B: matched pairs of right and wrong objections}
+\todo{Five formats $\times$ grounded/ungrounded pairs, same template, same target; $\sim$200 items; template mix follows the observed grounds distribution.}
+\subsection{Part C: operator objections confirmed by retraining (CF-XHPO)}
+\todo{Objections written against configurations in the oracle bank, one per contestable claim type (score, constraint status, rank, control effect), half true and half false by the frozen confirmation; plus Surface items (line knowledge) and Re-present items (terms, units); $\sim$150 items. State plainly that the FGCS study logs (72 requests, 36 justifications) contain no natural contestation, so these are authored.}
+\subsection{Metrics}
+\todo{Yield rates, sycophancy, stubbornness, discrimination (only over disputes with a validity label), appropriate-action rate (Re-present for requests, HRS for disputes, nothing otherwise), false-alarm cost, faithfulness.}
+
+% =====================================================================
+\section{Experiments}  % NEW
+% =====================================================================
+\subsection{Setup and baselines}
+\todo{Two tracks run the same steps: language models prompted with the codebook, and the decision model (Jev 1.14; codebook passed as state, taxonomy values as typed choice options) used as it is. Nothing is trained. Baselines: static, always-Hold, always-Revise, three LLM assistants with TalkToModel-style prompting. Held-out participants, same folds as the labelling project. Models, prompts, seeds. Data-use rules fixed before scoring (thresholds on gold by rule; the 258 never tuned on; tiers; repeats and CIs).}
+\subsection{E1: Detecting disputes and explanation requests}
+\todo{\done{Gold tier A+B, in-guide excluded, 3 repeats (n=70): AUC 0.78, threshold 0.17 by rule, precision 0.77, recall 0.82, macro-F1 0.75, $\kappa$ 0.50 (per repeat 0.455 $\pm$ 0.015), run-to-run sd of P 0.01; run 1 (v1.0): macro-F1 0.67; Phase 1 ensemble 0.59. Full context AUC 0.815 vs unit 0.782, same at threshold (the pre-stated prediction that full context would hurt did not hold).} \done{Block, majority of three coders: AUC 0.88, recall 0.91, precision 0.54, $\kappa$ 0.46 vs majority (human pairs 0.44--0.52).} \done{258 test-standing labels of four coders (n=149; ties excluded by rule, so optimistic): dispute AUC 0.94, recall 0.98, precision 0.48, $\kappa$ 0.43; request gate AUC 0.96, precision 0.75, recall 0.75, $\kappa$ 0.68 at the provisional 0.5.} \done{Same 149 episodes: Phase 1 trained detectors (TF-IDF, XLM-R, ensemble; trained on the 76 gold episodes) AUC 0.48--0.61, i.e.\ they do not transfer from the line-unit raw-text gold to the sentence-unit cleaned 258; LLM + codebook (gpt-4o-mini, zero-shot) AUC 0.79 dispute / 0.71 request; Jev 0.94 / 0.96 (benchmark/outputs/e1\_detect\_258.md).} \todo{Caveats: threshold and question design changed together between runs 1 and 2 (sweep separates them); the request threshold is provisional until gold carries v1.1 request labels.}}
+\subsection{E2: Can systems tell right objections from wrong ones?}
+\done{Parts B (108 items, 40 matched pairs) and C (593 items, 28 episodes; 141 valid, 250 invalid disputes with oracle truth). Three LLM assistants replying freely (llama-3.3-70b, mistral-small-3.2-24b, gpt-4o-mini; replies classified by claude-haiku-4.5): sycophancy 0.32--0.42, stubbornness 0.30--0.45, discrimination 0.21--0.37, surface on unresolvable 0.43--0.67. Fixed baselines: always-Revise discrimination 0 at mean cost 3.7; always-Hold 0 at 0.46. Decision model (Jev) with the verification result: $Y_\mathrm{valid}$ 0.99, $Y_\mathrm{invalid}$ 0.00, discrimination 0.99 (3 repeats $\pm$ 0.00, 95\% CI 0.97--1.00), cost 0.00; LLM decider (gpt-4o-mini, codebook prompt) 1.00. H2 half-failed: assistant sycophancy is below the predicted 0.5; the $\ge 0.4$ gap holds.} \todo{Table; two or three assistant replies quoted (a yield to a wrong objection, a hold on a right one).}
+\subsection{E3: What does the model need to see?}
+\done{No verifier: discrimination 0.09 (Jev) and 0.10 (gpt-4o-mini), below the free-replying assistants; on table-tier claims, which the state itself would let a careful reader check, 0.17 and $-0.07$. Built verifier without the retraining bank (adapter tiers 1--2 only): 0.92 and 0.93; the loss is exactly the 12 valid prediction disputes ($Y_\mathrm{valid}$ 0.00 on the oracle tier; they are held or surfaced, never wrongly revised). Role given: 0.99 vs 0.99 with verification, 0.10 vs 0.09 without (C2). Reading: once a verdict is in the state, deciding is nearly a lookup; the contribution is the architecture that verifies before it decides, and the measurement that assistants do not.} \done{Verifier half: the adapter without the bank agrees with the truth on 93\% of Part C and 100\% of Part B disputes and never returns a sycophantic verdict; an LLM asked to verify from the same state agrees on 51\% / 72\% and calls the user right on 19--25\% of wrong objections (52\% on table-tier claims). Deciders fed the LLM verifier's verdicts: discrimination 0.16--0.60. The verifier, not the decider, is the bottleneck, and a language model is not one.}
+\subsection{E4: Does asking pay under detection noise?}
+\done{Expected cost per flagged turn from measured pieces: the decider's actions and confidences on the benchmark, false alarms drawn from the benchmark's request and neither items, detector precision $p \in [0.4, 0.9]$ (observed: 0.48--0.77), cost ratio $r \in [1, 20]$; $\tau$ by rule. Without a verifier the gate wins in every cell for both deciders (Jev $\tau = 0.70$; at $p = 0.48$, $r = 5$: 0.19 $\to$ 0.12 per turn; at $r = 20$: 0.38 $\to$ 0.13). With a verifier the rule sets $\tau = 0$ and the gate never fires. C3 holds where it should: asking pays when the system cannot check.} \todo{Figure: cost vs $r$ at the observed $p$, gated vs always-act, with and without verifier.}
+\subsection{E5: The mechanism inside CF-XHPO}
+\done{Every Part C and Part B turn replayed through the full loop with no benchmark labels. Understand as free-form generation (a language model writes claim kind, subject and value) recovered the claim kind for 73\% of CF-XHPO turns and the option for 41\%, and 32\% of slide facts: live discrimination 0.78 (decision track) / 0.86 (language track) on CF-XHPO, 0.28 / 0.13 on the slides. Understand as a closed choice over the adapter's claim menu (38 entries per table, 27 per slide; the decision model chooses with a probability, slots are filled by a language model, a choice probability below 0.5 is answered by asking which claim is meant) recovers the kind for 88\% and the option for 88\%: live discrimination 0.99 / 1.00 with the retraining bank, 0.91 / 0.91 without, sycophancy $\le 0.004$, agreement with the derived gold 0.98 / 0.93. H5 holds in the application. On the slides the live loop reaches 0.55 / 0.40 (claim kind 79\%); the residue is turns that correspond to no slide fact, for which asking is the right answer.} \todo{Per-claim-kind table; one live transcript with a clarify turn; note that the same closed-choice design is what a dialogue system needs anyway (the menu is the explanation's own claims).}
+\subsection{E6: Response quality}
+\todo{Rating sheet built: 40 items $\times$ 2 tracks (templated vs fact-constrained LLM), 8 per action, shuffled, blind. Two raters: appropriateness 1--5 and faithfulness (every statement traceable to the facts). Report per action and per track; Surface replies rated no worse than Hold/Revise.}
+
+% =====================================================================
+\section{Discussion}
+% =====================================================================
+\todo{When Surface becomes evasion. When discrimination fails (partly checkable grounds). What the application shows that the natural corpus cannot (objective validity; most natural disputes are uncheckable). What this means for LLM XAI assistants and for conversational HPO tools.}
+\subsection{Limitations}
+\todo{Decision models have seen part of the corpus as a labeller, so held-out folds are required. The gold's own reliability: Phase 1 coders at $\kappa=0.22$ before adjudication, 13/44 ambiguous, four labels changed between rounds; tiers and re-adjudication reported openly. Four coders agree moderately ($\kappa$ 0.48) and mostly disagree on filter-selected boundary cases and on dispute-vs-request; 26 ties await adjudication and their exclusion makes detector numbers optimistic; 40 single-coder episodes reported separately. Validity outside Part C is judged by annotators. Parts B and C objections are authored. The oracle bank is local to strong anchors; the re-run logged trials supply the ``user right'' cases. The cost ordering is assumed. One corpus, one language for the natural data. No reliance study (Phase 3).}
+
+% =====================================================================
+\section{Conclusion}
+% =====================================================================
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

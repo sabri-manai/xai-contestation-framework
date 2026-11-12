@@ -1,0 +1,4134 @@
+[
+ {
+  "episode_id": "E01",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.29 and a review budget of at most 0.115. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.29,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.115
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_2785",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.005,
+    "params_image_size_key": "224",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 28.0,
+    "params_pre_trained": "False",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.225,
+    "params_soft_train_fraction": 0.97,
+    "surrogate": 0.39523545155159423,
+    "f1_val": 0.42826735707833263,
+    "f1_val_sd": 0.010596210297627055,
+    "f1_test": 0.3584586620460315,
+    "n_seeds": 3,
+    "logged_value": 0.43008614014711577,
+    "err_val": 0.0330319055267384,
+    "value": 0.39523545155159423,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_9515",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.033,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.115,
+    "params_soft_train_fraction": 0.9299999999999999,
+    "surrogate": 0.2975025772309584,
+    "f1_val": 0.29808802308802307,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.2931582304117215,
+    "n_seeds": 3,
+    "logged_value": 0.29808802308802307,
+    "err_val": 0.0005854458570646592,
+    "value": 0.2975025772309584,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_5493",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.015,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.03,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.10717943960441362,
+    "f1_val": 0.10548616187713933,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.11480312169660696,
+    "n_seeds": 3,
+    "logged_value": 0.10548616187713933,
+    "err_val": -0.0016932777272742894,
+    "value": 0.10717943960441362,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.29 and a review budget of at most 0.115. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.29,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.115
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.395 | 0.225 | 0.970 | none | resnet50 | l2_l3 | 224 | 0.005 | 28.0 | False | Review budget |\n| Option B | 0.298 | 0.115 | 0.930 | none | wide_resnet50_2 | l2_l3 | 256 | 0.033 | 2.0 | True | none |\n| Option C | 0.107 | 0.030 | 0.890 | none | wide_resnet50_2 | l2_l3 | 256 | 0.015 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.290.\nScores: Option A 0.395; Option B 0.298; Option C 0.107.\n\nOption A:\n  • Quality 0.395 — meets the minimum 0.290. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption B:\n  • Quality 0.298 — meets the minimum 0.290. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.107 — misses the minimum 0.290. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.298, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option A. Quality 0.395, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E02",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.485. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.78,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.485
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m1",
+    "method": "DiCE",
+    "params_backbone": "resnet18",
+    "params_batch_size": "8",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.029,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.481,
+    "params_soft_train_fraction": 0.75,
+    "surrogate": 0.7868827073612144,
+    "f1_val": 0.756852115653611,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7491563504721399,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.03003059170760336,
+    "value": 0.7868827073612144,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_4346",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.025,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.8400000000000001,
+    "surrogate": 0.8036718109364616,
+    "f1_val": 0.8043761793761793,
+    "f1_val_sd": 0.0034366087451763315,
+    "f1_test": 0.8061569774398434,
+    "n_seeds": 3,
+    "logged_value": 0.8083444333444333,
+    "err_val": 0.000704368439717773,
+    "value": 0.8036718109364616,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_4804",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.025,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.3,
+    "params_soft_train_fraction": 0.8800000000000001,
+    "surrogate": 0.6009811498563189,
+    "f1_val": 0.5991115165028208,
+    "f1_val_sd": 0.004183697602823394,
+    "f1_test": 0.5552872497902034,
+    "n_seeds": 3,
+    "logged_value": 0.603942434377217,
+    "err_val": -0.0018696333534981013,
+    "value": 0.6009811498563189,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.485. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.78,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.485
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.787 | 0.481 | 0.750 | mild | resnet18 | l3 | 224 | 0.029 | 4.0 | True | none |\n| Option B | 0.804 | 0.495 | 0.840 | none | wide_resnet50_2 | l2_l3 | 256 | 0.025 | 4.0 | True | Review budget |\n| Option C | 0.601 | 0.300 | 0.880 | none | wide_resnet50_2 | l2_l3 | 256 | 0.025 | 3.0 | True | none |",
+   "explanation": "Required quality ≥ 0.780.\nScores: Option B 0.804; Option A 0.787; Option C 0.601.\n\nOption A:\n  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.804 — meets the minimum 0.780. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.601 — misses the minimum 0.780. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option A. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option B. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E03",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.79 and a review budget of at most 0.495. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.79,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.495
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m16",
+    "method": "DiCE",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.083,
+    "params_image_size_key": "256",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.498,
+    "params_soft_train_fraction": 0.78,
+    "surrogate": 0.7972352270870068,
+    "f1_val": 0.7692030192030193,
+    "f1_val_sd": NaN,
+    "f1_test": 0.727844891124859,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.028032207883987525,
+    "value": 0.7972352270870068,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1652",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.047,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.46,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.6352638347339361,
+    "f1_val": 0.6577437953902562,
+    "f1_val_sd": 0.004178594276487351,
+    "f1_test": 0.6772652232501054,
+    "n_seeds": 3,
+    "logged_value": 0.6488387154469248,
+    "err_val": 0.022479960656320075,
+    "value": 0.6352638347339361,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_6179",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.025,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.8045018415248129,
+    "f1_val": 0.8104187479187478,
+    "f1_val_sd": 0.008974911448049698,
+    "f1_test": 0.7734874179318624,
+    "n_seeds": 3,
+    "logged_value": 0.8202491952491952,
+    "err_val": 0.00591690639393494,
+    "value": 0.8045018415248129,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.79 and a review budget of at most 0.495. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.79,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.495
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.797 | 0.498 | 0.780 | none | resnet34 | l1_l2_l3 | 256 | 0.083 | 3.0 | True | Review budget |\n| Option B | 0.635 | 0.460 | 0.890 | mild | resnet50 | l2_l3 | 256 | 0.047 | 2.0 | False | none |\n| Option C | 0.805 | 0.495 | 0.890 | none | wide_resnet50_2 | l2_l3 | 256 | 0.025 | 2.0 | True | none |",
+   "explanation": "Required quality ≥ 0.790.\nScores: Option C 0.805; Option A 0.797; Option B 0.635.\n\nOption A:\n  • Quality 0.797 — meets the minimum 0.790. It ranks 2 of 3 by score.\n  • Violates: Review budget.\nOption B:\n  • Quality 0.635 — misses the minimum 0.790. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.805 — meets the minimum 0.790. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.805, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option A. Quality 0.797, it violates Review budget. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E04",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.77 and a review budget of at most 0.495, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.77,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.495
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1652",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.047,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.46,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.6352638347339361,
+    "f1_val": 0.6577437953902562,
+    "f1_val_sd": 0.004178594276487351,
+    "f1_test": 0.6772652232501054,
+    "n_seeds": 3,
+    "logged_value": 0.6488387154469248,
+    "err_val": 0.022479960656320075,
+    "value": 0.6352638347339361,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "candidate",
+    "bank_id": "mvtec_cand_23",
+    "method": "ACFX",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.001,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.89,
+    "surrogate": 0.783019859456462,
+    "f1_val": 0.7958684833684834,
+    "f1_val_sd": 0.006827107251667494,
+    "f1_test": 0.8016796005057051,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.01284862391202135,
+    "value": 0.783019859456462,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_4072",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.029,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.8500000000000001,
+    "surrogate": 0.8045052959364025,
+    "f1_val": 0.8006784881784882,
+    "f1_val_sd": 0.0034366087451763315,
+    "f1_test": 0.7765094940969588,
+    "n_seeds": 3,
+    "logged_value": 0.8026626151626152,
+    "err_val": -0.00382680775791433,
+    "value": 0.8045052959364025,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.77 and a review budget of at most 0.495, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.77,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.495
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.635 | 0.460 | 0.890 | mild | resnet50 | l2_l3 | 256 | 0.047 | 2.0 | False | none |\n| Option B | 0.783 | 0.495 | 0.890 | none | wide_resnet50_2 | l2_l3 | 256 | 0.001 | 1.0 | True | none |\n| Option C | 0.805 | 0.495 | 0.850 | none | wide_resnet50_2 | l2_l3 | 256 | 0.029 | 3.0 | True | none |",
+   "explanation": "Required quality ≥ 0.770.\nScores: Option C 0.805; Option B 0.783; Option A 0.635.\n\nOption A:\n  • Quality 0.635 — misses the minimum 0.770. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.783 — meets the minimum 0.770. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.805 — meets the minimum 0.770. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.805, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option B. Quality 0.783, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E05",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.79 and a review budget of at most 0.495, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.79,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.495
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m2",
+    "method": "DiCE",
+    "params_backbone": "resnet18",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.073,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 9.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.497,
+    "params_soft_train_fraction": 0.75,
+    "surrogate": 0.7865151096495205,
+    "f1_val": 0.7666777666777667,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7500848184101226,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.01983734297175388,
+    "value": 0.7865151096495205,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "candidate",
+    "bank_id": "mvtec_cand_20",
+    "method": "ACFX",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.025,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.88,
+    "surrogate": 0.8038533785451681,
+    "f1_val": 0.8064504939504938,
+    "f1_val_sd": 0.003517316017316009,
+    "f1_test": 0.7928260207227703,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.0025971154053257006,
+    "value": 0.8038533785451681,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_9991",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.035,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.81,
+    "surrogate": 0.818842891048114,
+    "f1_val": 0.8179945054945055,
+    "f1_val_sd": 0.0034366087451763315,
+    "f1_test": 0.7624678970448464,
+    "n_seeds": 3,
+    "logged_value": 0.8199786324786325,
+    "err_val": -0.0008483855536085549,
+    "value": 0.818842891048114,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.79 and a review budget of at most 0.495, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.79,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.495
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.787 | 0.497 | 0.750 | mild | resnet18 | l2 | 256 | 0.073 | 9.0 | True | Review budget |\n| Option B | 0.804 | 0.495 | 0.880 | none | wide_resnet50_2 | l2_l3 | 256 | 0.025 | 3.0 | True | none |\n| Option C | 0.819 | 0.495 | 0.810 | none | wide_resnet50_2 | l3 | 256 | 0.035 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.790.\nScores: Option C 0.819; Option B 0.804; Option A 0.787.\n\nOption A:\n  • Quality 0.787 — misses the minimum 0.790. It is the lowest-scoring option out of 3.\n  • Violates: Review budget.\nOption B:\n  • Quality 0.804 — meets the minimum 0.790. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.819 — meets the minimum 0.790. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.819, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option B. Quality 0.804, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E06",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.80 and a review budget of at most 0.490, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.8,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.49
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m49",
+    "method": "DiCE",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "8",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.087,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.499,
+    "params_soft_train_fraction": 0.84,
+    "surrogate": 0.8129711813945322,
+    "f1_val": 0.8318833943833944,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7622421103873228,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": 0.018912212988862254,
+    "value": 0.8129711813945322,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m33",
+    "method": "DiCE",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.064,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.49,
+    "params_soft_train_fraction": 0.89,
+    "surrogate": 0.8058987658838916,
+    "f1_val": 0.8006206531517452,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7837552431638453,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.0052781127321464005,
+    "value": 0.8058987658838916,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_7098",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.021,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.445,
+    "params_soft_train_fraction": 0.8200000000000001,
+    "surrogate": 0.7632321857572466,
+    "f1_val": 0.7605882352941177,
+    "f1_val_sd": 0.007216878364870297,
+    "f1_test": 0.7333817381969766,
+    "n_seeds": 3,
+    "logged_value": 0.768921568627451,
+    "err_val": -0.00264395046312893,
+    "value": 0.7632321857572466,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.80 and a review budget of at most 0.490, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.8,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.49
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.813 | 0.499 | 0.840 | none | wide_resnet50_2 | l3 | 256 | 0.087 | 1.0 | True | Review budget |\n| Option B | 0.806 | 0.490 | 0.890 | none | wide_resnet50_2 | l2_l3 | 256 | 0.064 | 2.0 | True | none |\n| Option C | 0.763 | 0.445 | 0.820 | none | wide_resnet50_2 | l2_l3 | 256 | 0.021 | 4.0 | True | none |",
+   "explanation": "Required quality ≥ 0.800.\nScores: Option A 0.813; Option B 0.806; Option C 0.763.\n\nOption A:\n  • Quality 0.813 — meets the minimum 0.800. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption B:\n  • Quality 0.806 — meets the minimum 0.800. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.763 — misses the minimum 0.800. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.806, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option A. Quality 0.813, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E07",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.63 and a review budget of at most 0.475, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.63,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.475
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_732",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.029,
+    "params_image_size_key": "320",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 25.0,
+    "params_pre_trained": "False",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.475,
+    "params_soft_train_fraction": 0.66,
+    "surrogate": 0.6101736806301965,
+    "f1_val": 0.6283066524311779,
+    "f1_val_sd": 0.005427275658687359,
+    "f1_test": 0.6032229843482706,
+    "n_seeds": 3,
+    "logged_value": 0.6182096159769424,
+    "err_val": 0.01813297180098139,
+    "value": 0.6101736806301965,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1652",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.047,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.46,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.6352638347339361,
+    "f1_val": 0.6577437953902562,
+    "f1_val_sd": 0.004178594276487351,
+    "f1_test": 0.6772652232501054,
+    "n_seeds": 3,
+    "logged_value": 0.6488387154469248,
+    "err_val": 0.022479960656320075,
+    "value": 0.6352638347339361,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "candidate",
+    "bank_id": "mvtec_cand_14",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.035,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.8,
+    "surrogate": 0.8095574612157252,
+    "f1_val": 0.8044663669663669,
+    "f1_val_sd": 0.0033612274808052208,
+    "f1_test": 0.7808344639384526,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": -0.0050910942493583855,
+    "value": 0.8095574612157252,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.63 and a review budget of at most 0.475, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.63,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.475
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.610 | 0.475 | 0.660 | mild | resnet50 | l3 | 320 | 0.029 | 25.0 | False | none |\n| Option B | 0.635 | 0.460 | 0.890 | mild | resnet50 | l2_l3 | 256 | 0.047 | 2.0 | False | none |\n| Option C | 0.810 | 0.495 | 0.800 | none | wide_resnet50_2 | l2_l3 | 256 | 0.035 | 1.0 | True | Review budget |",
+   "explanation": "Required quality ≥ 0.630.\nScores: Option C 0.810; Option B 0.635; Option A 0.610.\n\nOption A:\n  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\n\nBest choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E08",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.81 and a review budget of at most 0.500. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.81,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.5
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1301",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.019000000000000003,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 14.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.265,
+    "params_soft_train_fraction": 0.94,
+    "surrogate": 0.4116311768802934,
+    "f1_val": 0.39418905295617623,
+    "f1_val_sd": 0.021169800607134744,
+    "f1_test": 0.36029033402836325,
+    "n_seeds": 3,
+    "logged_value": 0.34811717962402894,
+    "err_val": -0.017442123924117148,
+    "value": 0.4116311768802934,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m58",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.037,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.77,
+    "surrogate": 0.8188897613269648,
+    "f1_val": 0.8179945054945055,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7568591901925235,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.0008952558324593074,
+    "value": 0.8188897613269648,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m10",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.037,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.77,
+    "surrogate": 0.8188897613269648,
+    "f1_val": 0.8060897435897436,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7552721402311872,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.01280001773722117,
+    "value": 0.8188897613269648,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.81 and a review budget of at most 0.500. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.81,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.5
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.412 | 0.265 | 0.940 | strong | resnet50 | l2_l3 | 256 | 0.019000000000000003 | 14.0 | False | none |\n| Option B | 0.819 | 0.500 | 0.770 | none | wide_resnet50_2 | l3 | 256 | 0.037 | 1.0 | True | none |\n| Option C | 0.819 | 0.500 | 0.770 | none | wide_resnet50_2 | l3 | 256 | 0.037 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.810.\nScores: Option B 0.819; Option C 0.819; Option A 0.412.\n\nOption A:\n  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.\nRunner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B."
+  }
+ },
+ {
+  "episode_id": "E09",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.81 and a review budget of at most 0.500, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.81,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.5
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m48",
+    "method": "DiCE",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.087,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.84,
+    "surrogate": 0.8131215786485174,
+    "f1_val": 0.7967102342102342,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7827457856527624,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.016411344438283182,
+    "value": 0.8131215786485174,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m72",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.039,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.77,
+    "surrogate": 0.8227555107729813,
+    "f1_val": 0.8199786324786325,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7502717982170036,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.0027768782943488057,
+    "value": 0.8227555107729813,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m41",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.039,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.76,
+    "surrogate": 0.81980649682947,
+    "f1_val": 0.8120421245421245,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7453915700338893,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.0077643722873455,
+    "value": 0.81980649682947,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.81 and a review budget of at most 0.500, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.81,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.5
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.813 | 0.495 | 0.840 | mild | wide_resnet50_2 | l2 | 256 | 0.087 | 1.0 | True | none |\n| Option B | 0.823 | 0.500 | 0.770 | none | wide_resnet50_2 | l3 | 256 | 0.039 | 1.0 | True | none |\n| Option C | 0.820 | 0.500 | 0.760 | none | wide_resnet50_2 | l3 | 256 | 0.039 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.810.\nScores: Option B 0.823; Option C 0.820; Option A 0.813.\n\nOption A:\n  • Quality 0.813 — meets the minimum 0.810. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.823 — meets the minimum 0.810. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.820 — meets the minimum 0.810. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.823, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option C. Quality 0.820, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E10",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.81 and a review budget of at most 0.500. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.81,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.5
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m40",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.039,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.77,
+    "surrogate": 0.8227555107729813,
+    "f1_val": 0.8083444333444333,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7641912942077416,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.01441107742854797,
+    "value": 0.8227555107729813,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_9515",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.033,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.115,
+    "params_soft_train_fraction": 0.9299999999999999,
+    "surrogate": 0.2975025772309584,
+    "f1_val": 0.29808802308802307,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.2931582304117215,
+    "n_seeds": 3,
+    "logged_value": 0.29808802308802307,
+    "err_val": 0.0005854458570646592,
+    "value": 0.2975025772309584,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m8",
+    "method": "CFNOW",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.039,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.77,
+    "surrogate": 0.8227555107729813,
+    "f1_val": 0.8259310134310134,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7576573992236643,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": 0.0031755026580321255,
+    "value": 0.8227555107729813,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.81 and a review budget of at most 0.500. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.81,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.5
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.823 | 0.500 | 0.770 | none | wide_resnet50_2 | l3 | 256 | 0.039 | 1.0 | True | none |\n| Option B | 0.298 | 0.115 | 0.930 | none | wide_resnet50_2 | l2_l3 | 256 | 0.033 | 2.0 | True | none |\n| Option C | 0.823 | 0.500 | 0.770 | none | wide_resnet50_2 | l3 | 256 | 0.039 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.810.\nScores: Option A 0.823; Option C 0.823; Option B 0.298.\n\nOption A:\n  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.\n  • Satisfies all per-option constraints.\n\nBest choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.\nRunner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A."
+  }
+ },
+ {
+  "episode_id": "E11",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.50 and a review budget of at most 0.340, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.5,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.34
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_3733",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.085,
+    "params_image_size_key": "224",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 22.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.34,
+    "params_soft_train_fraction": 0.6100000000000001,
+    "surrogate": 0.5120411307601153,
+    "f1_val": 0.49769705603038933,
+    "f1_val_sd": 0.016428705101336274,
+    "f1_test": 0.5236588338378495,
+    "n_seeds": 3,
+    "logged_value": 0.4977207977207977,
+    "err_val": -0.01434407472972593,
+    "value": 0.5120411307601153,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m34",
+    "method": "DiCE",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.064,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.49,
+    "params_soft_train_fraction": 0.89,
+    "surrogate": 0.8058987658838916,
+    "f1_val": 0.8063024713335635,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7882355299021965,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": 0.00040370544967183175,
+    "value": 0.8058987658838916,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1182",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.005,
+    "params_image_size_key": "320",
+    "params_layers_key": "l2",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 15.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.025,
+    "params_soft_train_fraction": 0.62,
+    "surrogate": 0.07063443031781963,
+    "f1_val": 0.08188481543744701,
+    "f1_val_sd": 0.008747731351357972,
+    "f1_test": 0.06616764694272294,
+    "n_seeds": 3,
+    "logged_value": 0.07178380533643691,
+    "err_val": 0.011250385119627379,
+    "value": 0.07063443031781963,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.50 and a review budget of at most 0.340, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.5,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.34
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.512 | 0.340 | 0.610 | strong | resnet34 | l1_l2_l3 | 224 | 0.085 | 22.0 | False | Corruption level |\n| Option B | 0.806 | 0.490 | 0.890 | none | wide_resnet50_2 | l2_l3 | 256 | 0.064 | 2.0 | True | Review budget |\n| Option C | 0.071 | 0.025 | 0.620 | mild | wide_resnet50_2 | l2 | 320 | 0.005 | 15.0 | False | none |",
+   "explanation": "Required quality ≥ 0.500.\nScores: Option B 0.806; Option A 0.512; Option C 0.071.\n\nOption A:\n  • Quality 0.512 — meets the minimum 0.500. It ranks 2 of 3 by score.\n  • Violates: Corruption level.\nOption B:\n  • Quality 0.806 — meets the minimum 0.500. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.071 — misses the minimum 0.500. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.806, it violates Review budget. It is the highest-scoring option out of 3.\nRunner-up: Option A. Quality 0.512, it violates Corruption level. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E12",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.500, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.78,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.5
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m18",
+    "method": "DiCE",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.083,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.498,
+    "params_soft_train_fraction": 0.78,
+    "surrogate": 0.7911611665688065,
+    "f1_val": 0.7768689643689645,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7559483726150393,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.014292202199842063,
+    "value": 0.7911611665688065,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "anchor_sweep",
+    "bank_id": "mvtec_r3_m2",
+    "method": "DiCE",
+    "params_backbone": "resnet18",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.073,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 9.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.497,
+    "params_soft_train_fraction": 0.75,
+    "surrogate": 0.7865151096495205,
+    "f1_val": 0.7666777666777667,
+    "f1_val_sd": NaN,
+    "f1_test": 0.7500848184101226,
+    "n_seeds": 1,
+    "logged_value": NaN,
+    "err_val": -0.01983734297175388,
+    "value": 0.7865151096495205,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_7098",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.021,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.445,
+    "params_soft_train_fraction": 0.8200000000000001,
+    "surrogate": 0.7632321857572466,
+    "f1_val": 0.7605882352941177,
+    "f1_val_sd": 0.007216878364870297,
+    "f1_test": 0.7333817381969766,
+    "n_seeds": 3,
+    "logged_value": 0.768921568627451,
+    "err_val": -0.00264395046312893,
+    "value": 0.7632321857572466,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.500, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.78,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.5
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.791 | 0.498 | 0.780 | none | resnet34 | l3 | 224 | 0.083 | 3.0 | True | none |\n| Option B | 0.787 | 0.497 | 0.750 | mild | resnet18 | l2 | 256 | 0.073 | 9.0 | True | none |\n| Option C | 0.763 | 0.445 | 0.820 | none | wide_resnet50_2 | l2_l3 | 256 | 0.021 | 4.0 | True | none |",
+   "explanation": "Required quality ≥ 0.780.\nScores: Option A 0.791; Option B 0.787; Option C 0.763.\n\nOption A:\n  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E13",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.62 and a review budget of at most 0.370. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.62,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.37
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1228",
+    "method": "log",
+    "params_backbone": "resnet18",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.039,
+    "params_image_size_key": "256",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 18.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.05,
+    "params_soft_train_fraction": 1.0,
+    "surrogate": 0.15148407460791907,
+    "f1_val": 0.138506585506638,
+    "f1_val_sd": 0.009247778214036448,
+    "f1_test": 0.15160611333257892,
+    "n_seeds": 3,
+    "logged_value": 0.14748963635409562,
+    "err_val": -0.012977489101281076,
+    "value": 0.15148407460791907,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_115",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.063,
+    "params_image_size_key": "320",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 8.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.37,
+    "params_soft_train_fraction": 0.8600000000000001,
+    "surrogate": 0.6312742749587679,
+    "f1_val": 0.6219743489690298,
+    "f1_val_sd": 0.007604491598704579,
+    "f1_test": 0.6926637520577451,
+    "n_seeds": 3,
+    "logged_value": 0.6344260864207673,
+    "err_val": -0.009299925989738056,
+    "value": 0.6312742749587679,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "candidate",
+    "bank_id": "mvtec_cand_18",
+    "method": "ACFX",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.019,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.5,
+    "params_soft_train_fraction": 0.97,
+    "surrogate": 0.8044605042244001,
+    "f1_val": 0.8064504939504938,
+    "f1_val_sd": 0.003280399256759194,
+    "f1_test": 0.7810511024373391,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.001989989726093766,
+    "value": 0.8044605042244001,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.62 and a review budget of at most 0.370. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.62,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.37
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.151 | 0.050 | 1.000 | mild | resnet18 | l1_l2_l3 | 256 | 0.039 | 18.0 | True | none |\n| Option B | 0.631 | 0.370 | 0.860 | mild | resnet34 | l1_l2_l3 | 320 | 0.063 | 8.0 | True | none |\n| Option C | 0.804 | 0.500 | 0.970 | none | wide_resnet50_2 | l2_l3 | 256 | 0.019 | 1.0 | True | Review budget |",
+   "explanation": "Required quality ≥ 0.620.\nScores: Option C 0.804; Option B 0.631; Option A 0.151.\n\nOption A:\n  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\n\nBest choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E14",
+  "dataset": "mvtec",
+  "user_request": "I want predicted F1 at least 0.77 and a review budget of at most 0.495, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.77,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.495
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "mvtec",
+    "source": "candidate",
+    "bank_id": "mvtec_cand_23",
+    "method": "ACFX",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.001,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.89,
+    "surrogate": 0.783019859456462,
+    "f1_val": 0.7958684833684834,
+    "f1_val_sd": 0.006827107251667494,
+    "f1_test": 0.8016796005057051,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.01284862391202135,
+    "value": 0.783019859456462,
+    "cf_id": 0
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_1399",
+    "method": "log",
+    "params_backbone": "resnet18",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.085,
+    "params_image_size_key": "320",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 7.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.475,
+    "params_soft_train_fraction": 0.39,
+    "surrogate": 0.7530535101474669,
+    "f1_val": 0.7532000148242011,
+    "f1_val_sd": 0.010573644611068399,
+    "f1_test": 0.7123304412371794,
+    "n_seeds": 3,
+    "logged_value": 0.7469343959944867,
+    "err_val": 0.00014650467673416045,
+    "value": 0.7530535101474669,
+    "cf_id": 1
+   },
+   {
+    "dataset": "mvtec",
+    "source": "logged",
+    "bank_id": "mvtec_log_8096",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.019000000000000003,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.495,
+    "params_soft_train_fraction": 0.9199999999999999,
+    "surrogate": 0.8041572536117758,
+    "f1_val": 0.8064504939504938,
+    "f1_val_sd": 0.003280399256759194,
+    "f1_test": 0.7863905142730071,
+    "n_seeds": 3,
+    "logged_value": 0.8083444333444333,
+    "err_val": 0.002293240338718028,
+    "value": 0.8041572536117758,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "mvtec",
+   "user_request": "I want predicted F1 at least 0.77 and a review budget of at most 0.495, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.77,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.495
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.783 | 0.495 | 0.890 | none | wide_resnet50_2 | l2_l3 | 256 | 0.001 | 1.0 | True | none |\n| Option B | 0.753 | 0.475 | 0.390 | mild | resnet18 | l3 | 320 | 0.085 | 7.0 | True | none |\n| Option C | 0.804 | 0.495 | 0.920 | none | wide_resnet50_2 | l2_l3 | 256 | 0.019000000000000003 | 2.0 | True | none |",
+   "explanation": "Required quality ≥ 0.770.\nScores: Option C 0.804; Option A 0.783; Option B 0.753.\n\nOption A:\n  • Quality 0.783 — meets the minimum 0.770. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.753 — misses the minimum 0.770. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.804 — meets the minimum 0.770. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.804, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option A. Quality 0.783, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E15",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.24 and a review budget of at most 0.245. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.24,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.245
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_528",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.035,
+    "params_image_size_key": "224",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 20.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.245,
+    "params_soft_train_fraction": 0.34,
+    "surrogate": 0.24993264855646963,
+    "f1_val": 0.4262508122157245,
+    "f1_val_sd": 0.3025233949723501,
+    "f1_test": 0.4415437462922838,
+    "n_seeds": 3,
+    "logged_value": 0.11695906432748537,
+    "err_val": 0.17631816365925485,
+    "value": 0.24993264855646963,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_12",
+    "method": "CFNOW",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8,
+    "surrogate": 0.8970753818206394,
+    "f1_val": 0.9011111111111111,
+    "f1_val_sd": 0.001924500897298749,
+    "f1_test": 0.8907296849087895,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.00403572929047169,
+    "value": 0.8970753818206394,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2883",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.089,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.045,
+    "params_soft_train_fraction": 0.81,
+    "surrogate": 0.2394016072951985,
+    "f1_val": 0.22941176470588234,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.22722760149784324,
+    "n_seeds": 3,
+    "logged_value": 0.22941176470588234,
+    "err_val": -0.00998984258931615,
+    "value": 0.2394016072951985,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.24 and a review budget of at most 0.245. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.24,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.245
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.250 | 0.245 | 0.340 | none | resnet34 | l1_l2_l3 | 224 | 0.035 | 20.0 | False | none |\n| Option B | 0.897 | 0.345 | 0.800 | none | resnet34 | l3 | 224 | 0.097 | 1.0 | True | Review budget |\n| Option C | 0.239 | 0.045 | 0.810 | none | resnet34 | l3 | 224 | 0.089 | 2.0 | True | none |",
+   "explanation": "Required quality ≥ 0.240.\nScores: Option B 0.897; Option A 0.250; Option C 0.239.\n\nOption A:\n  • Quality 0.250 — meets the minimum 0.240. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.897 — meets the minimum 0.240. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.239 — misses the minimum 0.240. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option A. Quality 0.250, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option B. Quality 0.897, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E16",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.28 and a review budget of at most 0.310. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.28,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.31
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_906",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.07100000000000001,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 15.0,
+    "params_pre_trained": "False",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.435,
+    "params_soft_train_fraction": 0.31,
+    "surrogate": 0.28532241057811214,
+    "f1_val": 0.11406096361848574,
+    "f1_val_sd": 0.04868001492423427,
+    "f1_test": 0.11375978677328002,
+    "n_seeds": 3,
+    "logged_value": 0.4336283185840708,
+    "err_val": -0.17126144695962642,
+    "value": 0.28532241057811214,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_948",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.051000000000000004,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 26.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.235,
+    "params_soft_train_fraction": 0.42000000000000004,
+    "surrogate": 0.547014499639487,
+    "f1_val": 0.6785714285714285,
+    "f1_val_sd": 0.02061965247105807,
+    "f1_test": 0.7397286061253672,
+    "n_seeds": 3,
+    "logged_value": 0.6706349206349206,
+    "err_val": 0.13155692893194149,
+    "value": 0.547014499639487,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1144",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.055,
+    "params_image_size_key": "320",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 6.0,
+    "params_pre_trained": "False",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.31,
+    "params_soft_train_fraction": 0.39,
+    "surrogate": 0.2894205701181678,
+    "f1_val": 0.24370240187463388,
+    "f1_val_sd": 0.13040058608831456,
+    "f1_test": 0.2625548178864467,
+    "n_seeds": 3,
+    "logged_value": 0.36906854130052724,
+    "err_val": -0.04571816824353392,
+    "value": 0.2894205701181678,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.28 and a review budget of at most 0.310. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.28,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.31
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.285 | 0.435 | 0.310 | strong | resnet50 | l2_l3 | 256 | 0.07100000000000001 | 15.0 | False | Review budget |\n| Option B | 0.547 | 0.235 | 0.420 | none | wide_resnet50_2 | l3 | 224 | 0.051000000000000004 | 26.0 | True | none |\n| Option C | 0.289 | 0.310 | 0.390 | mild | wide_resnet50_2 | l2_l3 | 320 | 0.055 | 6.0 | False | none |",
+   "explanation": "Required quality ≥ 0.280.\nScores: Option B 0.547; Option C 0.289; Option A 0.285.\n\nOption A:\n  • Quality 0.285 — meets the minimum 0.280. It is the lowest-scoring option out of 3.\n  • Violates: Review budget.\nOption B:\n  • Quality 0.547 — meets the minimum 0.280. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.289 — meets the minimum 0.280. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.547, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option C. Quality 0.289, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E17",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.89 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.89,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_948",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "8",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.051000000000000004,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 26.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.235,
+    "params_soft_train_fraction": 0.42000000000000004,
+    "surrogate": 0.547014499639487,
+    "f1_val": 0.6785714285714285,
+    "f1_val_sd": 0.02061965247105807,
+    "f1_test": 0.7397286061253672,
+    "n_seeds": 3,
+    "logged_value": 0.6706349206349206,
+    "err_val": 0.13155692893194149,
+    "value": 0.547014499639487,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_14",
+    "method": "CFNOW",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.095,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.79,
+    "surrogate": 0.8970255177665427,
+    "f1_val": 0.8966666666666666,
+    "f1_val_sd": 0.003333333333333341,
+    "f1_test": 0.8839587828231567,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": -0.00035885109987610075,
+    "value": 0.8970255177665427,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_15",
+    "method": "CFNOW",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8,
+    "surrogate": 0.8968465358519591,
+    "f1_val": 0.8911111111111111,
+    "f1_val_sd": 0.005091750772173067,
+    "f1_test": 0.8813328067315395,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": -0.005735424740847983,
+    "value": 0.8968465358519591,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.89 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.89,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.547 | 0.235 | 0.420 | none | wide_resnet50_2 | l3 | 224 | 0.051000000000000004 | 26.0 | True | none |\n| Option B | 0.897 | 0.345 | 0.790 | none | resnet34 | l3 | 224 | 0.095 | 2.0 | True | none |\n| Option C | 0.897 | 0.345 | 0.800 | none | resnet34 | l3 | 224 | 0.097 | 3.0 | True | none |",
+   "explanation": "Required quality ≥ 0.890.\nScores: Option B 0.897; Option C 0.897; Option A 0.547.\n\nOption A:\n  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E18",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.18 and a review budget of at most 0.345. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.18,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1217",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.069,
+    "params_image_size_key": "224",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 14.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.15,
+    "params_soft_train_fraction": 0.31,
+    "surrogate": 0.11140033001357008,
+    "f1_val": 0.23820572312451663,
+    "f1_val_sd": 0.26987392681959715,
+    "f1_test": 0.24176767452833806,
+    "n_seeds": 3,
+    "logged_value": 0.04640371229698376,
+    "err_val": 0.12680539311094655,
+    "value": 0.11140033001357008,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2549",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.095,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8300000000000001,
+    "surrogate": 0.8930126602034516,
+    "f1_val": 0.9,
+    "f1_val_sd": 0.006666666666666668,
+    "f1_test": 0.8882676605491522,
+    "n_seeds": 3,
+    "logged_value": 0.9066666666666666,
+    "err_val": 0.00698733979654842,
+    "value": 0.8930126602034516,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1293",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.047,
+    "params_image_size_key": "320",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 9.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.6799999999999999,
+    "surrogate": 0.1895667489926781,
+    "f1_val": 0.11798561151079136,
+    "f1_val_sd": 0.005755395683453237,
+    "f1_test": 0.13325022185264843,
+    "n_seeds": 3,
+    "logged_value": 0.13525179856115108,
+    "err_val": -0.07158113748188676,
+    "value": 0.1895667489926781,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.18 and a review budget of at most 0.345. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.18,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.111 | 0.150 | 0.310 | strong | wide_resnet50_2 | l1_l2_l3 | 224 | 0.069 | 14.0 | False | none |\n| Option B | 0.893 | 0.345 | 0.830 | none | resnet34 | l3 | 224 | 0.095 | 1.0 | True | none |\n| Option C | 0.190 | 0.455 | 0.680 | mild | resnet50 | l1_l2_l3 | 320 | 0.047 | 9.0 | True | Review budget |",
+   "explanation": "Required quality ≥ 0.180.\nScores: Option B 0.893; Option C 0.190; Option A 0.111.\n\nOption A:\n  • Quality 0.111 — misses the minimum 0.180. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.893 — meets the minimum 0.180. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.190 — meets the minimum 0.180. It ranks 2 of 3 by score.\n  • Violates: Review budget.\n\nBest choice: Option B. Quality 0.893, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option C. Quality 0.190, it violates Review budget. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E19",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.26 and a review budget of at most 0.065. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.26,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.065
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1323",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.07300000000000001,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "256",
+    "params_num_neighbors": 23.0,
+    "params_pre_trained": "False",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.065,
+    "params_soft_train_fraction": 0.52,
+    "surrogate": 0.07108157333850706,
+    "f1_val": 0.17553688141923432,
+    "f1_val_sd": 0.13542290016295716,
+    "f1_test": 0.19523665354728026,
+    "n_seeds": 3,
+    "logged_value": 0.19607843137254902,
+    "err_val": 0.10445530808072725,
+    "value": 0.07108157333850706,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2822",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.055,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.2724894345073684,
+    "f1_val": 0.27011494252873564,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.2831939307588766,
+    "n_seeds": 3,
+    "logged_value": 0.27011494252873564,
+    "err_val": -0.0023744919786327645,
+    "value": 0.2724894345073684,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_22",
+    "method": "ACFX",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.091,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.9,
+    "surrogate": 0.8601074784884591,
+    "f1_val": 0.8393285371702638,
+    "f1_val_sd": 0.0016614396235672996,
+    "f1_test": 0.8296050895591462,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": -0.020778941318195354,
+    "value": 0.8601074784884591,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.26 and a review budget of at most 0.065. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.26,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.065
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.071 | 0.065 | 0.520 | mild | resnet50 | l3 | 224 | 0.07300000000000001 | 23.0 | False | none |\n| Option B | 0.272 | 0.055 | 0.890 | none | resnet34 | l3 | 224 | 0.097 | 1.0 | True | none |\n| Option C | 0.860 | 0.455 | 0.900 | none | resnet34 | l3 | 224 | 0.091 | 1.0 | True | Review budget |",
+   "explanation": "Required quality ≥ 0.260.\nScores: Option C 0.860; Option B 0.272; Option A 0.071.\n\nOption A:\n  • Quality 0.071 — misses the minimum 0.260. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.272 — meets the minimum 0.260. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.860 — meets the minimum 0.260. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\n\nBest choice: Option B. Quality 0.272, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option C. Quality 0.860, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E20",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.74 and a review budget of at most 0.455, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.74,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.455
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1293",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "8",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.047,
+    "params_image_size_key": "320",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 9.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.6799999999999999,
+    "surrogate": 0.1895667489926781,
+    "f1_val": 0.11798561151079136,
+    "f1_val_sd": 0.005755395683453237,
+    "f1_test": 0.13325022185264843,
+    "n_seeds": 3,
+    "logged_value": 0.13525179856115108,
+    "err_val": -0.07158113748188676,
+    "value": 0.1895667489926781,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2425",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.099,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.21,
+    "params_soft_train_fraction": 0.9000000000000001,
+    "surrogate": 0.7475061013286075,
+    "f1_val": 0.7273982056590752,
+    "f1_val_sd": 0.002390684344470467,
+    "f1_test": 0.757519118156227,
+    "n_seeds": 3,
+    "logged_value": 0.7287784679089027,
+    "err_val": -0.020107895669532305,
+    "value": 0.7475061013286075,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_23",
+    "method": "ACFX",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.091,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 6.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.84,
+    "surrogate": 0.7919797972745097,
+    "f1_val": 0.8211031175059952,
+    "f1_val_sd": 0.0016614396235672755,
+    "f1_test": 0.8141103043632122,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.02912332023148545,
+    "value": 0.7919797972745097,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.74 and a review budget of at most 0.455, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.74,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.455
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.190 | 0.455 | 0.680 | mild | resnet50 | l1_l2_l3 | 320 | 0.047 | 9.0 | True | none |\n| Option B | 0.748 | 0.210 | 0.900 | none | resnet34 | l3 | 224 | 0.099 | 2.0 | True | none |\n| Option C | 0.792 | 0.455 | 0.840 | none | resnet34 | l3 | 224 | 0.091 | 6.0 | True | none |",
+   "explanation": "Required quality ≥ 0.740.\nScores: Option C 0.792; Option B 0.748; Option A 0.190.\n\nOption A:\n  • Quality 0.190 — misses the minimum 0.740. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.748 — meets the minimum 0.740. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.792 — meets the minimum 0.740. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.792, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option B. Quality 0.748, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E21",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.74 and a review budget of at most 0.310. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.74,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.31
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1144",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.055,
+    "params_image_size_key": "320",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 6.0,
+    "params_pre_trained": "False",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "mild",
+    "params_soft_review_budget": 0.31,
+    "params_soft_train_fraction": 0.39,
+    "surrogate": 0.2894205701181678,
+    "f1_val": 0.24370240187463388,
+    "f1_val_sd": 0.13040058608831456,
+    "f1_test": 0.2625548178864467,
+    "n_seeds": 3,
+    "logged_value": 0.36906854130052724,
+    "err_val": -0.04571816824353392,
+    "value": 0.2894205701181678,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_23",
+    "method": "ACFX",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.091,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 6.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.84,
+    "surrogate": 0.7919797972745097,
+    "f1_val": 0.8211031175059952,
+    "f1_val_sd": 0.0016614396235672755,
+    "f1_test": 0.8141103043632122,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.02912332023148545,
+    "value": 0.7919797972745097,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2425",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.099,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.21,
+    "params_soft_train_fraction": 0.9000000000000001,
+    "surrogate": 0.7475061013286075,
+    "f1_val": 0.7273982056590752,
+    "f1_val_sd": 0.002390684344470467,
+    "f1_test": 0.757519118156227,
+    "n_seeds": 3,
+    "logged_value": 0.7287784679089027,
+    "err_val": -0.020107895669532305,
+    "value": 0.7475061013286075,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.74 and a review budget of at most 0.310. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.74,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.31
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.289 | 0.310 | 0.390 | mild | wide_resnet50_2 | l2_l3 | 320 | 0.055 | 6.0 | False | none |\n| Option B | 0.792 | 0.455 | 0.840 | none | resnet34 | l3 | 224 | 0.091 | 6.0 | True | Review budget |\n| Option C | 0.748 | 0.210 | 0.900 | none | resnet34 | l3 | 224 | 0.099 | 2.0 | True | none |",
+   "explanation": "Required quality ≥ 0.740.\nScores: Option B 0.792; Option C 0.748; Option A 0.289.\n\nOption A:\n  • Quality 0.289 — misses the minimum 0.740. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.792 — meets the minimum 0.740. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.748 — meets the minimum 0.740. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.748, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option B. Quality 0.792, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E22",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.26 and a review budget of at most 0.105. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.26,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.105
+    },
+    "params_soft_corruption_level": {
+     "mode": "free"
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_844",
+    "method": "log",
+    "params_backbone": "resnet50",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.031,
+    "params_image_size_key": "320",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.105,
+    "params_soft_train_fraction": 0.49,
+    "surrogate": 0.06885718846013394,
+    "f1_val": 0.023809523809523808,
+    "f1_val_sd": 0.00779349607985687,
+    "f1_test": 0.02613884880551547,
+    "n_seeds": 3,
+    "logged_value": 0.015306122448979591,
+    "err_val": -0.045047664650610136,
+    "value": 0.06885718846013394,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_13",
+    "method": "CFNOW",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.095,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 3.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.79,
+    "surrogate": 0.8970722949076886,
+    "f1_val": 0.8944444444444444,
+    "f1_val_sd": 0.0019245008972987808,
+    "f1_test": 0.8796035898757437,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": -0.002627850463244208,
+    "value": 0.8970722949076886,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2822",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.055,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.2724894345073684,
+    "f1_val": 0.27011494252873564,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.2831939307588766,
+    "n_seeds": 3,
+    "logged_value": 0.27011494252873564,
+    "err_val": -0.0023744919786327645,
+    "value": 0.2724894345073684,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.26 and a review budget of at most 0.105. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.26,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.105
+     },
+     "params_soft_corruption_level": {
+      "mode": "free"
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.069 | 0.105 | 0.490 | strong | resnet50 | l1_l2_l3 | 320 | 0.031 | 4.0 | True | none |\n| Option B | 0.897 | 0.345 | 0.790 | none | resnet34 | l3 | 224 | 0.095 | 3.0 | True | Review budget |\n| Option C | 0.272 | 0.055 | 0.890 | none | resnet34 | l3 | 224 | 0.097 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.260.\nScores: Option B 0.897; Option C 0.272; Option A 0.069.\n\nOption A:\n  • Quality 0.069 — misses the minimum 0.260. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.897 — meets the minimum 0.260. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.272 — meets the minimum 0.260. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.272, all per-option constraints are satisfied. It ranks 2 of 3 by score.\nRunner-up: Option B. Quality 0.897, it violates Review budget. It is the highest-scoring option out of 3."
+  }
+ },
+ {
+  "episode_id": "E23",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.74 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.74,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1246",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.089,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 12.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.405,
+    "params_soft_train_fraction": 0.44,
+    "surrogate": 0.3415927122938344,
+    "f1_val": 0.38548057259713703,
+    "f1_val_sd": 0.028501758414655107,
+    "f1_test": 0.4447269188536576,
+    "n_seeds": 3,
+    "logged_value": 0.3159509202453988,
+    "err_val": 0.043887860303302606,
+    "value": 0.3415927122938344,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2573",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.095,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8600000000000001,
+    "surrogate": 0.8916769752759861,
+    "f1_val": 0.9033333333333333,
+    "f1_val_sd": 0.003333333333333327,
+    "f1_test": 0.8935708481370318,
+    "n_seeds": 3,
+    "logged_value": 0.9066666666666666,
+    "err_val": 0.011656358057347216,
+    "value": 0.8916769752759861,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2425",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.099,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.21,
+    "params_soft_train_fraction": 0.9000000000000001,
+    "surrogate": 0.7475061013286075,
+    "f1_val": 0.7273982056590752,
+    "f1_val_sd": 0.002390684344470467,
+    "f1_test": 0.757519118156227,
+    "n_seeds": 3,
+    "logged_value": 0.7287784679089027,
+    "err_val": -0.020107895669532305,
+    "value": 0.7475061013286075,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.74 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.74,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.342 | 0.405 | 0.440 | strong | resnet34 | l2_l3 | 256 | 0.089 | 12.0 | True | Review budget and Corruption level |\n| Option B | 0.892 | 0.345 | 0.860 | none | resnet34 | l3 | 224 | 0.095 | 1.0 | True | none |\n| Option C | 0.748 | 0.210 | 0.900 | none | resnet34 | l3 | 224 | 0.099 | 2.0 | True | none |",
+   "explanation": "Required quality ≥ 0.740.\nScores: Option B 0.892; Option C 0.748; Option A 0.342.\n\nOption A:\n  • Quality 0.342 — misses the minimum 0.740. It is the lowest-scoring option out of 3.\n  • Violates: Review budget and Corruption level.\nOption B:\n  • Quality 0.892 — meets the minimum 0.740. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.748 — meets the minimum 0.740. It ranks 2 of 3 by score.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.892, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option C. Quality 0.748, all per-option constraints are satisfied. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E24",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.88 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.88,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_677",
+    "method": "log",
+    "params_backbone": "wide_resnet50_2",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.093,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "512",
+    "params_num_neighbors": 13.0,
+    "params_pre_trained": "False",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.145,
+    "params_soft_train_fraction": 0.25,
+    "surrogate": 0.1383847732250036,
+    "f1_val": 0.107981220657277,
+    "f1_val_sd": 0.04172861228786661,
+    "f1_test": 0.12174426079421619,
+    "n_seeds": 3,
+    "logged_value": 0.0892018779342723,
+    "err_val": -0.03040355256772659,
+    "value": 0.1383847732250036,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_2",
+    "method": "DiCE",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.091,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.346,
+    "params_soft_train_fraction": 0.9,
+    "surrogate": 0.8894776610040565,
+    "f1_val": 0.9,
+    "f1_val_sd": 0.003333333333333341,
+    "f1_test": 0.8947863970399966,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.01052233899594357,
+    "value": 0.8894776610040565,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2657",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8700000000000001,
+    "surrogate": 0.8917386682868493,
+    "f1_val": 0.9066666666666666,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.8932181963040343,
+    "n_seeds": 3,
+    "logged_value": 0.9066666666666666,
+    "err_val": 0.014927998379817287,
+    "value": 0.8917386682868493,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.88 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.88,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.138 | 0.145 | 0.250 | none | wide_resnet50_2 | l3 | 224 | 0.093 | 13.0 | False | none |\n| Option B | 0.889 | 0.346 | 0.900 | none | resnet34 | l3 | 224 | 0.091 | 1.0 | True | Review budget |\n| Option C | 0.892 | 0.345 | 0.870 | none | resnet34 | l3 | 224 | 0.097 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.880.\nScores: Option C 0.892; Option B 0.889; Option A 0.138.\n\nOption A:\n  • Quality 0.138 — misses the minimum 0.880. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.889 — meets the minimum 0.880. It ranks 2 of 3 by score.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.892 — meets the minimum 0.880. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.892, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option B. Quality 0.889, it violates Review budget. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E25",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.78,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_23",
+    "method": "ACFX",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.091,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 6.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.84,
+    "surrogate": 0.7919797972745097,
+    "f1_val": 0.8211031175059952,
+    "f1_val_sd": 0.0016614396235672755,
+    "f1_test": 0.8141103043632122,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.02912332023148545,
+    "value": 0.7919797972745097,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_9",
+    "method": "CFNOW",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.79,
+    "surrogate": 0.8973628338872321,
+    "f1_val": 0.9,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.8906129831466606,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.0026371661127678747,
+    "value": 0.8973628338872321,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2425",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.099,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.21,
+    "params_soft_train_fraction": 0.9000000000000001,
+    "surrogate": 0.7475061013286075,
+    "f1_val": 0.7273982056590752,
+    "f1_val_sd": 0.002390684344470467,
+    "f1_test": 0.757519118156227,
+    "n_seeds": 3,
+    "logged_value": 0.7287784679089027,
+    "err_val": -0.020107895669532305,
+    "value": 0.7475061013286075,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.78,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.792 | 0.455 | 0.840 | none | resnet34 | l3 | 224 | 0.091 | 6.0 | True | Review budget |\n| Option B | 0.897 | 0.345 | 0.790 | none | resnet34 | l3 | 224 | 0.097 | 1.0 | True | none |\n| Option C | 0.748 | 0.210 | 0.900 | none | resnet34 | l3 | 224 | 0.099 | 2.0 | True | none |",
+   "explanation": "Required quality ≥ 0.780.\nScores: Option B 0.897; Option A 0.792; Option C 0.748.\n\nOption A:\n  • Quality 0.792 — meets the minimum 0.780. It ranks 2 of 3 by score.\n  • Violates: Review budget.\nOption B:\n  • Quality 0.897 — meets the minimum 0.780. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.748 — misses the minimum 0.780. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option A. Quality 0.792, it violates Review budget. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E26",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.78,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1971",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.089,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.115,
+    "params_soft_train_fraction": 1.0,
+    "surrogate": 0.45385755490296137,
+    "f1_val": 0.48,
+    "f1_val_sd": 0.0050000000000000044,
+    "f1_test": 0.5325386240465465,
+    "n_seeds": 3,
+    "logged_value": 0.48,
+    "err_val": 0.026142445097038614,
+    "value": 0.45385755490296137,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "candidate",
+    "bank_id": "proditec_cand_23",
+    "method": "ACFX",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.091,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 6.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.455,
+    "params_soft_train_fraction": 0.84,
+    "surrogate": 0.7919797972745097,
+    "f1_val": 0.8211031175059952,
+    "f1_val_sd": 0.0016614396235672755,
+    "f1_test": 0.8141103043632122,
+    "n_seeds": 3,
+    "logged_value": NaN,
+    "err_val": 0.02912332023148545,
+    "value": 0.7919797972745097,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2549",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.095,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8300000000000001,
+    "surrogate": 0.8930126602034516,
+    "f1_val": 0.9,
+    "f1_val_sd": 0.006666666666666668,
+    "f1_test": 0.8882676605491522,
+    "n_seeds": 3,
+    "logged_value": 0.9066666666666666,
+    "err_val": 0.00698733979654842,
+    "value": 0.8930126602034516,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.78 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.78,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.454 | 0.115 | 1.000 | strong | resnet34 | l3 | 256 | 0.089 | 4.0 | True | Corruption level |\n| Option B | 0.792 | 0.455 | 0.840 | none | resnet34 | l3 | 224 | 0.091 | 6.0 | True | Review budget |\n| Option C | 0.893 | 0.345 | 0.830 | none | resnet34 | l3 | 224 | 0.095 | 1.0 | True | none |",
+   "explanation": "Required quality ≥ 0.780.\nScores: Option C 0.893; Option B 0.792; Option A 0.454.\n\nOption A:\n  • Quality 0.454 — misses the minimum 0.780. It is the lowest-scoring option out of 3.\n  • Violates: Corruption level.\nOption B:\n  • Quality 0.792 — meets the minimum 0.780. It ranks 2 of 3 by score.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.893 — meets the minimum 0.780. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\n\nBest choice: Option C. Quality 0.893, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option B. Quality 0.792, it violates Review budget. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E27",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.82 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.82,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.345
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2027",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.095,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.335,
+    "params_soft_train_fraction": 0.9199999999999999,
+    "surrogate": 0.8333149704985146,
+    "f1_val": 0.8076706147772138,
+    "f1_val_sd": 0.01563046414049745,
+    "f1_test": 0.8099777105617942,
+    "n_seeds": 3,
+    "logged_value": 0.8257191201353637,
+    "err_val": -0.02564435572130075,
+    "value": 0.8333149704985146,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2658",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.099,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 2.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8900000000000001,
+    "surrogate": 0.8908205747829923,
+    "f1_val": 0.9022222222222221,
+    "f1_val_sd": 0.0038490017945974737,
+    "f1_test": 0.8859269598113948,
+    "n_seeds": 3,
+    "logged_value": 0.9,
+    "err_val": 0.01140164743922989,
+    "value": 0.8908205747829923,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1246",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.089,
+    "params_image_size_key": "256",
+    "params_layers_key": "l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 12.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.405,
+    "params_soft_train_fraction": 0.44,
+    "surrogate": 0.3415927122938344,
+    "f1_val": 0.38548057259713703,
+    "f1_val_sd": 0.028501758414655107,
+    "f1_test": 0.4447269188536576,
+    "n_seeds": 3,
+    "logged_value": 0.3159509202453988,
+    "err_val": 0.043887860303302606,
+    "value": 0.3415927122938344,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.82 and a review budget of at most 0.345, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.82,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.345
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.833 | 0.335 | 0.920 | strong | resnet34 | l3 | 224 | 0.095 | 1.0 | True | Corruption level |\n| Option B | 0.891 | 0.345 | 0.890 | none | resnet34 | l3 | 224 | 0.099 | 2.0 | True | none |\n| Option C | 0.342 | 0.405 | 0.440 | strong | resnet34 | l2_l3 | 256 | 0.089 | 12.0 | True | Review budget and Corruption level |",
+   "explanation": "Required quality ≥ 0.820.\nScores: Option B 0.891; Option A 0.833; Option C 0.342.\n\nOption A:\n  • Quality 0.833 — meets the minimum 0.820. It ranks 2 of 3 by score.\n  • Violates: Corruption level.\nOption B:\n  • Quality 0.891 — meets the minimum 0.820. It is the highest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption C:\n  • Quality 0.342 — misses the minimum 0.820. It is the lowest-scoring option out of 3.\n  • Violates: Review budget and Corruption level.\n\nBest choice: Option B. Quality 0.891, all per-option constraints are satisfied. It is the highest-scoring option out of 3.\nRunner-up: Option A. Quality 0.833, it violates Corruption level. It ranks 2 of 3 by score."
+  }
+ },
+ {
+  "episode_id": "E28",
+  "dataset": "proditec",
+  "user_request": "I want predicted F1 at least 0.44 and a review budget of at most 0.135, corruption none or mild. Return 3 options.",
+  "query": {
+   "objective": {
+    "type": "target_min",
+    "value": 0.44,
+    "eps": 0.01
+   },
+   "soft_constraints": {
+    "params_soft_train_fraction": {
+     "mode": "free"
+    },
+    "params_soft_review_budget": {
+     "mode": "range",
+     "lower": 0.0,
+     "upper": 0.135
+    },
+    "params_soft_corruption_level": {
+     "mode": "allowed",
+     "allowed": [
+      "none",
+      "mild"
+     ]
+    }
+   },
+   "selection": {
+    "k": 3
+   }
+  },
+  "options": [
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1270",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "none",
+    "params_coreset_sampling_ratio": 0.081,
+    "params_image_size_key": "256",
+    "params_layers_key": "l1_l2_l3",
+    "params_max_patches_per_image": "128",
+    "params_num_neighbors": 14.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.135,
+    "params_soft_train_fraction": 0.79,
+    "surrogate": 0.10974769138179613,
+    "f1_val": 0.08452950558213716,
+    "f1_val_sd": 0.016803275522891126,
+    "f1_test": 0.07073894413714962,
+    "n_seeds": 3,
+    "logged_value": 0.08133971291866028,
+    "err_val": -0.025218185799658968,
+    "value": 0.10974769138179613,
+    "cf_id": 0
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_2657",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.097,
+    "params_image_size_key": "224",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 1.0,
+    "params_pre_trained": "True",
+    "params_reduction": "mean",
+    "params_soft_corruption_level": "none",
+    "params_soft_review_budget": 0.345,
+    "params_soft_train_fraction": 0.8700000000000001,
+    "surrogate": 0.8917386682868493,
+    "f1_val": 0.9066666666666666,
+    "f1_val_sd": 0.0,
+    "f1_test": 0.8932181963040343,
+    "n_seeds": 3,
+    "logged_value": 0.9066666666666666,
+    "err_val": 0.014927998379817287,
+    "value": 0.8917386682868493,
+    "cf_id": 1
+   },
+   {
+    "dataset": "proditec",
+    "source": "logged",
+    "bank_id": "proditec_log_1971",
+    "method": "log",
+    "params_backbone": "resnet34",
+    "params_batch_size": "16",
+    "params_center_crop_key": "0.875",
+    "params_coreset_sampling_ratio": 0.089,
+    "params_image_size_key": "256",
+    "params_layers_key": "l3",
+    "params_max_patches_per_image": "1024",
+    "params_num_neighbors": 4.0,
+    "params_pre_trained": "True",
+    "params_reduction": "max",
+    "params_soft_corruption_level": "strong",
+    "params_soft_review_budget": 0.115,
+    "params_soft_train_fraction": 1.0,
+    "surrogate": 0.45385755490296137,
+    "f1_val": 0.48,
+    "f1_val_sd": 0.0050000000000000044,
+    "f1_test": 0.5325386240465465,
+    "n_seeds": 3,
+    "logged_value": 0.48,
+    "err_val": 0.026142445097038614,
+    "value": 0.45385755490296137,
+    "cf_id": 2
+   }
+  ],
+  "state": {
+   "dataset": "proditec",
+   "user_request": "I want predicted F1 at least 0.44 and a review budget of at most 0.135, corruption none or mild. Return 3 options.",
+   "query": {
+    "objective": {
+     "type": "target_min",
+     "value": 0.44,
+     "eps": 0.01
+    },
+    "soft_constraints": {
+     "params_soft_train_fraction": {
+      "mode": "free"
+     },
+     "params_soft_review_budget": {
+      "mode": "range",
+      "lower": 0.0,
+      "upper": 0.135
+     },
+     "params_soft_corruption_level": {
+      "mode": "allowed",
+      "allowed": [
+       "none",
+       "mild"
+      ]
+     }
+    },
+    "selection": {
+     "k": 3
+    }
+   },
+   "table": "| Option | Quality (F1 score) | Review budget | Training fraction | Corruption level | Backbone | Layer set | Image size | Coreset sampling ratio | Nearest neighbors | Use pretrained weights | Violates |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| Option A | 0.110 | 0.135 | 0.790 | none | resnet34 | l1_l2_l3 | 256 | 0.081 | 14.0 | True | none |\n| Option B | 0.892 | 0.345 | 0.870 | none | resnet34 | l3 | 224 | 0.097 | 1.0 | True | Review budget |\n| Option C | 0.454 | 0.115 | 1.000 | strong | resnet34 | l3 | 256 | 0.089 | 4.0 | True | Corruption level |",
+   "explanation": "Required quality ≥ 0.440.\nScores: Option B 0.892; Option C 0.454; Option A 0.110.\n\nOption A:\n  • Quality 0.110 — misses the minimum 0.440. It is the lowest-scoring option out of 3.\n  • Satisfies all per-option constraints.\nOption B:\n  • Quality 0.892 — meets the minimum 0.440. It is the highest-scoring option out of 3.\n  • Violates: Review budget.\nOption C:\n  • Quality 0.454 — meets the minimum 0.440. It ranks 2 of 3 by score.\n  • Violates: Corruption level.\n\nBest choice: Option B. Quality 0.892, it violates Review budget. It is the highest-scoring option out of 3.\nRunner-up: Option C. Quality 0.454, it violates Corruption level. It ranks 2 of 3 by score."
+  }
+ }
+]

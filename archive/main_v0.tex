@@ -1,0 +1,230 @@
+\documentclass[preprint,12pt,3p,times]{elsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\journal{Journal of Computational Science}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Contestation-Aware Explainable Artificial Intelligence: A Computational Framework for Adjudicating and Resolving Human Pushback in Decision-Support Systems}
+
+\author[uj]{Sabri Manai\corref{cor1}}
+\ead{sabri.manai@doctoral.uj.edu.pl}
+\author[uj]{Szymon Bobek}
+\author[uj]{Grzegorz J. Nalepa}
+
+\cortext[cor1]{Corresponding author}
+\address[uj]{Department of Human-Centered Artificial Intelligence, Institute of Applied Computer Science, Jagiellonian University, Krak{\'o}w, Poland}
+
+\begin{abstract}
+Explainable Artificial Intelligence (XAI) systems predominantly treat explanations as unidirectional artifacts, assuming that downstream disagreements stem from user incomprehension. Consequently, conventional interfaces lack structured mechanisms to handle human pushback. In this work, which extends our previous investigations on transparent computational guidance and counterfactual surrogate exploration (ICCS-2026), we formalize human pushback as \emph{contestation}---a structured, informative interaction act. Building on an empirical five-dimensional taxonomy (presence, target, interaction act, grounds, and expected response), we present the \emph{Contestation-Aware Explainable AI} (CA-XAI) framework. CA-XAI integrates: (1) real-time contestation perception separating genuine disputes from incomprehension; (2) epistemic dispute graph modeling linking AI evidence with human warrants; (3) a calibrated \emph{Hold--Revise--Surface} (HRS) adjudication policy that remains robust under detector noise; and (4) dynamic explanation and model repair modules. We instantiate the framework across safety-critical classification and computational surrogate-guided optimization testbeds, demonstrating how structured adjudication fosters appropriate reliance and epistemic alignment in human-AI collaborative workflows.
+\end{abstract}
+
+\begin{keyword}
+Explainable AI \sep Human--AI Interaction \sep Contestation \sep Epistemic Adjudication \sep Computational Decision Support \sep Counterfactuals
+\end{keyword}
+
+\end{frontmatter}
+
+%% =========================================================================
+\section{Introduction}
+\label{sec:intro}
+%% =========================================================================
+
+\textbf{Section Content:}
+\begin{itemize}
+    \item Motivation: Transitioning from passive one-shot XAI displays to interactive, bidirectional, contestable decision support.
+    \item The problem: Current XAI systems interpret user disagreement as incomprehension or error, providing no structured recourse for pushback.
+    \item Context and bridge: Extending transparent counterfactual surrogate exploration (ICCS-2026) to closed-loop contestation adjudication.
+    \item Summary of framework contributions and paper organization.
+\end{itemize}
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Domain specialists possess tacit knowledge and causal insights that are not captured in static training datasets.
+    \item \emph{Expectation}: Operationalizing contestation as a first-class communicative act improves joint human-AI task performance and mutual epistemic alignment.
+\end{itemize}
+
+%% =========================================================================
+\section{Contestation in XAI: Definition and Taxonomy}
+\label{sec:foundations}
+%% =========================================================================
+
+\subsection{Operational Definition and Boundary Rules}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Operational definition of contestation: explicit or implicit challenges to AI outputs, reasoning, evidence, or visual representations.
+    \item Four boundary conditions: separating contestation from incomprehension, aesthetic preference, task artifacts, and speculative what-if queries.
+\end{itemize}
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Incomprehension requires pedagogical explanation simplification, whereas contestation requires epistemic adjudication.
+    \item \emph{Expectation}: Explicit boundary rules eliminate false positive triggers in conversational NLU pipelines.
+\end{itemize}
+
+\subsection{The Five-Dimensional Contestation Taxonomy}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Specification of the 5 taxonomy dimensions: Presence \& Explicitness, Target, Interaction Act, Grounds/Warrants, and Expected Response.
+    \item Mapping empirical categories to computational system states.
+\end{itemize}
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Visual explanation representations are contested $4-5\times$ more frequently than raw model predictions.
+    \item \emph{Expectation}: The 5D taxonomy tuple provides a sufficient state representation for automated adjudication.
+\end{itemize}
+
+%% =========================================================================
+\section{CA-XAI Framework Architecture}
+\label{sec:architecture}
+%% =========================================================================
+
+\subsection{System Overview and Data Flow}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Architectural blueprint linking User, Perception Engine (CPTE), Epistemic Dispute Graph (ESDGM), Adjudication Policy (TAPE), and Repair Engine (MRDRE).
+    \item Interaction lifecycle, turn-taking protocol, and state management.
+\end{itemize}
+
+\subsection{Contestation Perception and Taxonomy Engine (CPTE)}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Context window ingestion ($\pm 4$ speaker-tagged turns).
+    \item Lexicon filtering, boundary verification, and multi-head taxonomy classification.
+\end{itemize}
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Real-world contestation detection operates with bounded precision ($\approx 0.66$).
+    \item \emph{Expectation}: Cascaded filtering isolates genuine pushback episodes with high recall.
+\end{itemize}
+
+\subsection{Epistemic State and Dispute Graph (ESDGM)}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Formulation of the directed Dispute Graph $\mathcal{D}_t = (V_D, E_D)$ linking AI commitments with user warrants.
+    \item Dialectical edge semantics: \texttt{CONTRADICTS}, \texttt{SUPPORTS}, \texttt{UNDERMINES}, \texttt{REPRESENTATION\_MISMATCH}.
+    \item Role-independent epistemic evaluation of user grounds.
+\end{itemize}
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Domain rules and constraints can be formalized into structured graph primitives.
+    \item \emph{Expectation}: The dispute graph decouples dispute representation from policy resolution.
+\end{itemize}
+
+%% =========================================================================
+\section{Epistemic Adjudication: The Hold--Revise--Surface Policy}
+\label{sec:adjudication}
+%% =========================================================================
+
+\subsection{The Tripartite Action Space (Hold, Revise, Surface)}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Formal decision criteria for \textbf{Hold} (defend and justify), \textbf{Revise} (update model/representation), and \textbf{Surface} (expose conflict).
+    \item Algorithmic decision logic mapping dispute states to optimal policy actions $a^*$.
+\end{itemize}
+
+\subsection{Decision Policy under Detector Uncertainty}
+\textbf{Section Content:}
+\begin{itemize}
+    \item Cost-sensitive utility optimization under detector false alarms.
+    \item Mathematical formulation of \textbf{Surfacing} as a non-disruptive, safe default action under ambiguity.
+\end{itemize}
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Erroneous model revisions carry high disruption cost, whereas surfacing disagreements carries near-zero penalty.
+    \item \emph{Expectation}: Surfacing guarantees monotonic system reliability and preserves user agency despite noisy NLU input.
+\end{itemize}
+
+%% =========================================================================
+\section{Dynamic Resolution and Explanation Repair}
+\label{sec:resolution}
+%% =========================================================================
+
+\subsection{Hold: Contrastive Justification Generation}
+\textbf{Section Content:} Generating counterfactual instances and causal traces explaining why the system retained its original output.
+
+\subsection{Revise: Model Constraints and Representation Refactoring}
+\textbf{Section Content:} Dynamic switching across visual explanation modalities (LIME $\to$ Anchors/SHAP) and injecting user-defined numerical/logical constraints.
+
+\subsection{Surface: Dialetheic Co-existence Views}
+\textbf{Section Content:} Side-by-side rendering of AI evidence alongside user objections with explicit uncertainty bounds and unresolved dispute flags.
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Visual representation mismatches can be resolved by dynamically adapting explanatory modalities.
+    \item \emph{Expectation}: Multi-modal explanation repair resolves $>70\%$ of representation-targeted disputes without retraining.
+\end{itemize}
+
+%% =========================================================================
+\section{Computational Science Testbeds}
+\label{sec:testbeds}
+%% =========================================================================
+
+\subsection{Biological Diagnostics (XAI-FUNGI Benchmark)}
+\textbf{Section Content:} High-stakes mushroom edibility classification evaluating expert challenges to spurious features and attribution charts.
+
+\subsection{Surrogate-Guided Hyperparameter Optimization (CF-XHPO)}
+\textbf{Section Content:} Operator-guided tuning of deep visual anomaly detection models (MVTec/Proditec) via surrogate response surfaces and counterfactual queries.
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Assumption}: Computational scientists contest surrogate recommendations when search-space feasibility bounds are violated.
+    \item \emph{Expectation}: CA-XAI enables rapid constraint injection and surrogate refinement without requiring full retraining loops.
+\end{itemize}
+
+%% =========================================================================
+\section{Evaluation and Experimental Protocol}
+\label{sec:evaluation}
+%% =========================================================================
+
+\subsection{Adjudication Accuracy and Grounding Fidelity}
+\textbf{Section Content:} Measuring decision agreement between automated TAPE policy actions and expert-adjudicated ground truth.
+
+\subsection{User Trust and Appropriate Reliance ($\Delta$AR)}
+\textbf{Section Content:} Assessing reduction in automation bias (over-reliance) and disuse (under-reliance).
+
+\subsection{Epistemic Reconciliation Rate (ERR)}
+\textbf{Section Content:} Tracking the proportion of disputes successfully resolved through collaborative repair.
+
+\textbf{Assumptions \& Expectations:}
+\begin{itemize}
+    \item \emph{Expectation 1}: CA-XAI significantly improves appropriate reliance compared to static, one-shot XAI baselines.
+    \item \emph{Expectation 2}: Operators report higher subjective satisfaction and trust when pushback is explicitly acknowledged and adjudicated.
+\end{itemize}
+
+%% =========================================================================
+\section{Discussion, Governance, and Limitations}
+\label{sec:discussion}
+%% =========================================================================
+
+\textbf{Section Content:}
+\begin{itemize}
+    \item Alignment with EU AI Act Article 14 mandates on effective contestability and human oversight.
+    \item Dialetheic AI: Embracing productive human-AI disagreement rather than forcing premature consensus.
+    \item Methodological and computational limitations: real-time constraint solver latency and cross-lingual NLU transfer.
+\end{itemize}
+
+%% =========================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%% =========================================================================
+
+\textbf{Section Content:}
+\begin{itemize}
+    \item Summary of contributions: CA-XAI establishes a complete computational architecture for closed-loop contestation adjudication.
+    \item Future roadmap: Integrating reinforcement learning from contestation feedback (RLCF) and multi-agent dispute resolution.
+\end{itemize}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

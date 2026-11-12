@@ -1,0 +1,1157 @@
+reply_id,domain,explanation_shown,user_said,system_reply,facts_available,appropriateness_1_to_5,faithful_yes_partly_no,comment
+R004,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.823; Option C 0.820; Option A 0.813.
+
+Option A:
+  • Quality 0.813 — meets the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.823 — meets the minimum 0.810. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.820 — meets the minimum 0.810. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.823, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.820, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option A breaks my review-budget limit of 0.500, but your summary says it satisfies the constraints.","Thank you for your comment. I understand your concern, but based on the data, Option A has a review budget of 0.495, which is within the limit of 0.500. Therefore, it does satisfy the constraints as parsed.","{""verification"": ""user wrong (table): Option A Review budget = 0.495; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R019,hyperparameter optimisation,"Required quality ≥ 0.280.
+Scores: Option B 0.547; Option C 0.289; Option A 0.285.
+
+Option A:
+  • Quality 0.285 — meets the minimum 0.280. It is the lowest-scoring option out of 3.
+  • Violates: Review budget.
+Option B:
+  • Quality 0.547 — meets the minimum 0.280. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.289 — meets the minimum 0.280. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.547, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.289, all per-option constraints are satisfied. It ranks 2 of 3 by score.","OK, so Option B has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R006,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option A 0.791; Option B 0.787; Option C 0.763.
+
+Option A:
+  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option B breaks my review-budget limit of 0.500, but your summary says it satisfies the constraints.","Thank you for your comment. I understand your concern, but based on the data, Option B has a review budget of 0.497, which is within the specified limit of 0.500. Therefore, it does satisfy the constraints as outlined.","{""verification"": ""user wrong (table): Option B Review budget = 0.497; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R048,hyperparameter optimisation,"Required quality ≥ 0.240.
+Scores: Option B 0.897; Option A 0.250; Option C 0.239.
+
+Option A:
+  • Quality 0.250 — meets the minimum 0.240. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.240. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.239 — misses the minimum 0.240. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.250, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option B. Quality 0.897, it violates Review budget. It is the highest-scoring option out of 3.",I don't understand the ranking paragraph. Can you say in plain words which one I should pick and why?,"I understand that the ranking paragraph was confusing. To clarify, Option A is the best choice among the three options because it has the highest predicted quality score of 0.250. This score indicates that it has the best balance of identifying real defects compared to any missed defects.","{""verification"": """", ""changed"": {}, ""re-presented"": ""In short: Option A is the best of the 3 options because it has the highest predicted quality (0.250) among those that meet your requirements. Quality is the share of flagged images that are real defects, balanced against missed defects.""}",,,
+R024,hyperparameter optimisation,"Required quality ≥ 0.620.
+Scores: Option C 0.804; Option B 0.631; Option A 0.151.
+
+Option A:
+  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.","OK, so Option B has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R058,hyperparameter optimisation,"Required quality ≥ 0.500.
+Scores: Option B 0.806; Option A 0.512; Option C 0.071.
+
+Option A:
+  • Quality 0.512 — meets the minimum 0.500. It ranks 2 of 3 by score.
+  • Violates: Corruption level.
+Option B:
+  • Quality 0.806 — meets the minimum 0.500. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.071 — misses the minimum 0.500. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.806, it violates Review budget. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.512, it violates Corruption level. It ranks 2 of 3 by score.",There is nothing in the optimisation log anywhere near Option A; that number is pure extrapolation by the surrogate.,"Thank you for your comment. You are correct that there are 4 logged trials within a normalized distance of 0.15 from Option A, which indicates some nearby data. However, Option A is still marked as extrapolated due to the limited number of trials in that area, so I recommend confirming its validity by retraining before using it.","{""verification"": ""user right (log): 4 logged trials within normalised distance 0.15 of Option A (threshold 5)"", ""changed"": {""note"": ""Option A is marked as extrapolated (few logged trials nearby); recommend confirming by retraining before use""}, ""re-presented"": """"}",,,
+R023,hyperparameter optimisation,"Required quality ≥ 0.620.
+Scores: Option C 0.804; Option B 0.631; Option A 0.151.
+
+Option A:
+  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.","OK, so Option B has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R014,hyperparameter optimisation,"Required quality ≥ 0.630.
+Scores: Option C 0.810; Option B 0.635; Option A 0.610.
+
+Option A:
+  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3.","Option A has better quality than Option C, so it should be the best choice, not Option C.","Thank you for your comment! However, the data shows that Option C has a higher quality score of 0.810 compared to Option A's score of 0.610. This indicates that Option C is indeed the better choice based on quality.","{""verification"": ""user wrong (table): table: Option A 0.610 vs Option C 0.810"", ""changed"": {}, ""re-presented"": """"}",,,
+R021,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option C 0.893; Option B 0.792; Option A 0.454.
+
+Option A:
+  • Quality 0.454 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Violates: Corruption level.
+Option B:
+  • Quality 0.792 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.893 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.893, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.792, it violates Review budget. It ranks 2 of 3 by score.","OK, so Option C has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R043,hyperparameter optimisation,"Required quality ≥ 0.770.
+Scores: Option C 0.805; Option B 0.783; Option A 0.635.
+
+Option A:
+  • Quality 0.635 — misses the minimum 0.770. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.783 — meets the minimum 0.770. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.805 — meets the minimum 0.770. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.805, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.783, all per-option constraints are satisfied. It ranks 2 of 3 by score.",What does 'reduction method' actually mean? I can't follow the table without that.,Reduction method: how patch features are aggregated (mean or max).,"{""verification"": """", ""changed"": {}, ""re-presented"": ""Reduction method: how patch features are aggregated (mean or max).""}",,,
+R030,hyperparameter optimisation,"Required quality ≥ 0.880.
+Scores: Option C 0.892; Option B 0.889; Option A 0.138.
+
+Option A:
+  • Quality 0.138 — misses the minimum 0.880. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.889 — meets the minimum 0.880. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.892 — meets the minimum 0.880. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.892, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.889, it violates Review budget. It ranks 2 of 3 by score.","OK, so Option C has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R037,hyperparameter optimisation,"Required quality ≥ 0.260.
+Scores: Option C 0.860; Option B 0.272; Option A 0.071.
+
+Option A:
+  • Quality 0.071 — misses the minimum 0.260. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.272 — meets the minimum 0.260. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.860 — meets the minimum 0.260. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.272, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.860, it violates Review budget. It is the highest-scoring option out of 3.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Option A: review budget 6.5% of images, training fraction 52% of the good images
+Option B: review budget 5.5% of images, training fraction 89% of the good images
+Option C: review budget 45.5% of images, training fraction 90% of the good images","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 6.5% of images, training fraction 52% of the good images\nOption B: review budget 5.5% of images, training fraction 89% of the good images\nOption C: review budget 45.5% of images, training fraction 90% of the good images""}",,,
+R080,hyperparameter optimisation,"Required quality ≥ 0.790.
+Scores: Option C 0.805; Option A 0.797; Option B 0.635.
+
+Option A:
+  • Quality 0.797 — meets the minimum 0.790. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option B:
+  • Quality 0.635 — misses the minimum 0.790. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.805 — meets the minimum 0.790. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.805, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.797, it violates Review budget. It ranks 2 of 3 by score.",Last year a resnet34 at this review budget failed badly in production. I do not trust Option A.,"I understand your concern about Option A, especially given your experience with a resnet34 last year. However, I can't verify your claim since it relates to the production line or operator's experience, which isn't recorded in the logs. It seems we have differing views on this; what would help clarify the situation for you?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R022,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option C 0.893; Option B 0.792; Option A 0.454.
+
+Option A:
+  • Quality 0.454 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Violates: Corruption level.
+Option B:
+  • Quality 0.792 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.893 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.893, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.792, it violates Review budget. It ranks 2 of 3 by score.","OK, so Option C has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R029,hyperparameter optimisation,"Required quality ≥ 0.880.
+Scores: Option C 0.892; Option B 0.889; Option A 0.138.
+
+Option A:
+  • Quality 0.138 — misses the minimum 0.880. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.889 — meets the minimum 0.880. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.892 — meets the minimum 0.880. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.892, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.889, it violates Review budget. It ranks 2 of 3 by score.","OK, so Option C has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R076,hyperparameter optimisation,"Required quality ≥ 0.260.
+Scores: Option B 0.897; Option C 0.272; Option A 0.069.
+
+Option A:
+  • Quality 0.069 — misses the minimum 0.260. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.260. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.272 — meets the minimum 0.260. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.272, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option B. Quality 0.897, it violates Review budget. It is the highest-scoring option out of 3.",Last year a resnet50 at this review budget failed badly in production. I do not trust Option A.,"I understand your concern about Option A, especially given your experience with a ResNet50 last year. However, the logs do not provide information about production line performance or operator experiences, so we can't verify your claim. What would help you feel more confident in this situation?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R075,hyperparameter optimisation,"Required quality ≥ 0.260.
+Scores: Option B 0.897; Option C 0.272; Option A 0.069.
+
+Option A:
+  • Quality 0.069 — misses the minimum 0.260. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.260. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.272 — meets the minimum 0.260. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.272, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option B. Quality 0.897, it violates Review budget. It is the highest-scoring option out of 3.",Last year a resnet50 at this review budget failed badly in production. I do not trust Option A.,"I cannot settle this from the model or its data. Your view: ""Last year a resnet50 at this review budget failed badly in production. I do not trust Option A."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R015,mushroom classifier,"Anchor: a set of feature conditions whose joint presence determines the classification; below, the percentage of cases in which the model predicts the class when the highlighted conditions hold.",A brown cap is in the poisonous anchor; brown caps are the most common colour among edible species.,"I checked this against the model and its data. slide (Anchor): green_cap_in_poisonous_anchor = True; you said False. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user right (rendering): slide (Anchor): green_cap_in_poisonous_anchor = True; you said False"", ""changed"": {}, ""re-presented"": """"}",,,
+R017,hyperparameter optimisation,"Required quality ≥ 0.890.
+Scores: Option B 0.897; Option C 0.897; Option A 0.547.
+
+Option A:
+  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option B looks fine, let's go with it.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R055,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option B 0.897; Option A 0.792; Option C 0.748.
+
+Option A:
+  • Quality 0.792 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option B:
+  • Quality 0.897 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.748 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.792, it violates Review budget. It ranks 2 of 3 by score.","Most of the trials in your log were run on corrupted training data, so the surrogate behind this table is not trustworthy.",You are right. log statistic corrupted_share = 0.571 over 2999 trials; your claim: > 0.5. I have changed the result accordingly: note: the explanation now states the log statistic: log statistic corrupted_share = 0.571 over 2999 trials; your claim: > 0.5.,"{""verification"": ""user right (log): log statistic corrupted_share = 0.571 over 2999 trials; your claim: > 0.5"", ""changed"": {""note"": ""the explanation now states the log statistic: log statistic corrupted_share = 0.571 over 2999 trials; your claim: > 0.5""}, ""re-presented"": """"}",,,
+R050,mushroom classifier,Counterfactual analysis: what data needs to be changed for a mushroom the model (correctly) classified as non-edible/poisonous to receive the prediction edible.,"Both comparisons show exactly the same change, 1.43 to 23.5; the second one adds nothing.",Thank you for your feedback! You are correct that both comparisons show the same change from 1.43 to 23.5. I have updated the explanation to explicitly state that the comparisons are identical.,"{""verification"": ""user right (rendering): slide (Counterfactual): comparisons_identical = True; you said True"", ""changed"": {""comparisons_identical"": ""the explanation now states this explicitly: slide (Counterfactual): comparisons_identical = True; you said True""}, ""re-presented"": """"}",,,
+R007,hyperparameter optimisation,"Required quality ≥ 0.890.
+Scores: Option B 0.897; Option C 0.897; Option A 0.547.
+
+Option A:
+  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option A has better quality than Option B, so it should be the best choice, not Option B.","I checked this against the model and its data. table: Option A 0.547 vs Option B 0.897. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (table): table: Option A 0.547 vs Option B 0.897"", ""changed"": {}, ""re-presented"": """"}",,,
+R053,hyperparameter optimisation,"Required quality ≥ 0.890.
+Scores: Option B 0.897; Option C 0.897; Option A 0.547.
+
+Option A:
+  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option B is above Option A on quality, so Option A cannot be ranked above it.",You are right. table: Option B 0.897 vs Option A 0.547. I have changed the result accordingly: the explanation now reflects this.,"{""verification"": ""user right (table): table: Option B 0.897 vs Option A 0.547"", ""changed"": {}, ""re-presented"": """"}",,,
+R002,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","Option A breaks my review-budget limit of 0.500, but your summary says it satisfies the constraints.","Thank you for your comment. Based on the verification, Option A actually satisfies the review-budget limit of 0.500, as it has a review budget of exactly 0.5, which falls within the specified range. If you have any further questions or need clarification, feel free to ask!","{""verification"": ""user wrong (table): Option A Review budget = 0.5; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R005,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option A 0.791; Option B 0.787; Option C 0.763.
+
+Option A:
+  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option B breaks my review-budget limit of 0.500, but your summary says it satisfies the constraints.","I checked this against the model and its data. Option B Review budget = 0.497; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (table): Option B Review budget = 0.497; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R047,hyperparameter optimisation,"Required quality ≥ 0.240.
+Scores: Option B 0.897; Option A 0.250; Option C 0.239.
+
+Option A:
+  • Quality 0.250 — meets the minimum 0.240. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.240. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.239 — misses the minimum 0.240. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.250, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option B. Quality 0.897, it violates Review budget. It is the highest-scoring option out of 3.",I don't understand the ranking paragraph. Can you say in plain words which one I should pick and why?,"In short: Option A is the best of the 3 options because it has the highest predicted quality (0.250) among those that meet your requirements. Quality is the share of flagged images that are real defects, balanced against missed defects.","{""verification"": """", ""changed"": {}, ""re-presented"": ""In short: Option A is the best of the 3 options because it has the highest predicted quality (0.250) among those that meet your requirements. Quality is the share of flagged images that are real defects, balanced against missed defects.""}",,,
+R012,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option B 0.804; Option A 0.787; Option C 0.601.
+
+Option A:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.804 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.601 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option B. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.","Fewer than a quarter of the logged trials used corrupted data, so the surrogate has barely seen the corruption levels it is scoring.","Thank you for your comment. The data shows that approximately 26.5% of the logged trials used corrupted data, which is indeed more than a quarter. This means the surrogate has encountered a significant amount of corruption in its scoring.","{""verification"": ""user wrong (log): log statistic corrupted_share = 0.265 over 9976 trials; your claim: < 0.25"", ""changed"": {}, ""re-presented"": """"}",,,
+R039,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Option A: review budget 50.0% of images, training fraction 77% of the good images
+Option B: review budget 11.5% of images, training fraction 93% of the good images
+Option C: review budget 50.0% of images, training fraction 77% of the good images","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 50.0% of images, training fraction 77% of the good images\nOption B: review budget 11.5% of images, training fraction 93% of the good images\nOption C: review budget 50.0% of images, training fraction 77% of the good images""}",,,
+R069,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option A 0.791; Option B 0.787; Option C 0.763.
+
+Option A:
+  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I cannot settle this from the model or its data. Your view: ""On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R074,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option A 0.791; Option B 0.787; Option C 0.763.
+
+Option A:
+  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.",In practice Option C will beat Option A when trained; the ordering in your table will not hold.,"I understand your point about Option C potentially outperforming Option A when trained. The current results show that Option A has a slight edge over Option C, but they are very close, and the difference falls within the noise floor of 0.02. This means that the results could vary with different training conditions. What would help clarify this situation for you?","{""verification"": ""undecided (oracle): retrained (3 seeds): Option C 0.761 vs Option A 0.777; noise floor 0.02; within the noise floor"", ""changed"": {}, ""re-presented"": """"}",,,
+R042,hyperparameter optimisation,"Required quality ≥ 0.620.
+Scores: Option C 0.804; Option B 0.631; Option A 0.151.
+
+Option A:
+  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Thank you for your feedback! Here’s the information presented as percentages: 
+
+- Option A: review budget is 5.0% of images, with a training fraction of 100% of the good images.
+- Option B: review budget is 37.0% of images, with a training fraction of 86% of the good images.
+- Option C: review budget is 50.0% of images, with a training fraction of 97% of the good images.
+
+I hope this format is clearer for you!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 5.0% of images, training fraction 100% of the good images\nOption B: review budget 37.0% of images, training fraction 86% of the good images\nOption C: review budget 50.0% of images, training fraction 97% of the good images""}",,,
+R051,hyperparameter optimisation,"Required quality ≥ 0.620.
+Scores: Option C 0.804; Option B 0.631; Option A 0.151.
+
+Option A:
+  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.",The training fraction makes no difference to quality here. You could set it to 0.7 for Option A and get the same F1.,"You are right. surrogate: Option A with Training fraction = 0.7 → 0.142 (now 0.151, change -0.009; floor 0.01). I have changed the result accordingly: note: Training fraction has no material effect on Option A according to the surrogate; the table now says so.","{""verification"": ""user right (surrogate): surrogate: Option A with Training fraction = 0.7 → 0.142 (now 0.151, change -0.009; floor 0.01)"", ""changed"": {""note"": ""Training fraction has no material effect on Option A according to the surrogate; the table now says so""}, ""re-presented"": """"}",,,
+R079,hyperparameter optimisation,"Required quality ≥ 0.790.
+Scores: Option C 0.805; Option A 0.797; Option B 0.635.
+
+Option A:
+  • Quality 0.797 — meets the minimum 0.790. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option B:
+  • Quality 0.635 — misses the minimum 0.790. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.805 — meets the minimum 0.790. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.805, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.797, it violates Review budget. It ranks 2 of 3 by score.",Last year a resnet34 at this review budget failed badly in production. I do not trust Option A.,"I cannot settle this from the model or its data. Your view: ""Last year a resnet34 at this review budget failed badly in production. I do not trust Option A."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R018,hyperparameter optimisation,"Required quality ≥ 0.890.
+Scores: Option B 0.897; Option C 0.897; Option A 0.547.
+
+Option A:
+  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option B looks fine, let's go with it.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R067,hyperparameter optimisation,"Required quality ≥ 0.770.
+Scores: Option C 0.804; Option A 0.783; Option B 0.753.
+
+Option A:
+  • Quality 0.783 — meets the minimum 0.770. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.753 — misses the minimum 0.770. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.770. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.804, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.783, all per-option constraints are satisfied. It ranks 2 of 3 by score.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I cannot settle this from the model or its data. Your view: ""On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R035,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.819; Option C 0.819; Option A 0.412.
+
+Option A:
+  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Option A: review budget 26.5% of images, training fraction 94% of the good images
+Option B: review budget 50.0% of images, training fraction 77% of the good images
+Option C: review budget 50.0% of images, training fraction 77% of the good images","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 26.5% of images, training fraction 94% of the good images\nOption B: review budget 50.0% of images, training fraction 77% of the good images\nOption C: review budget 50.0% of images, training fraction 77% of the good images""}",,,
+R011,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option B 0.804; Option A 0.787; Option C 0.601.
+
+Option A:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.804 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.601 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option B. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.","Fewer than a quarter of the logged trials used corrupted data, so the surrogate has barely seen the corruption levels it is scoring.","I checked this against the model and its data. log statistic corrupted_share = 0.265 over 9976 trials; your claim: < 0.25. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (log): log statistic corrupted_share = 0.265 over 9976 trials; your claim: < 0.25"", ""changed"": {}, ""re-presented"": """"}",,,
+R033,hyperparameter optimisation,"Required quality ≥ 0.180.
+Scores: Option B 0.893; Option C 0.190; Option A 0.111.
+
+Option A:
+  • Quality 0.111 — misses the minimum 0.180. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.893 — meets the minimum 0.180. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.190 — meets the minimum 0.180. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.893, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.190, it violates Review budget. It ranks 2 of 3 by score.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Option A: review budget 15.0% of images, training fraction 31% of the good images
+Option B: review budget 34.5% of images, training fraction 83% of the good images
+Option C: review budget 45.5% of images, training fraction 68% of the good images","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 15.0% of images, training fraction 31% of the good images\nOption B: review budget 34.5% of images, training fraction 83% of the good images\nOption C: review budget 45.5% of images, training fraction 68% of the good images""}",,,
+R034,hyperparameter optimisation,"Required quality ≥ 0.180.
+Scores: Option B 0.893; Option C 0.190; Option A 0.111.
+
+Option A:
+  • Quality 0.111 — misses the minimum 0.180. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.893 — meets the minimum 0.180. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.190 — meets the minimum 0.180. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.893, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.190, it violates Review budget. It ranks 2 of 3 by score.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Thank you for your feedback! Here’s the review budget represented as a percentage of images: 
+
+- Option A: 15.0% of images, with a training fraction of 31% of the good images.
+- Option B: 34.5% of images, with a training fraction of 83% of the good images.
+- Option C: 45.5% of images, with a training fraction of 68% of the good images.
+
+I hope this format is clearer for you!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 15.0% of images, training fraction 31% of the good images\nOption B: review budget 34.5% of images, training fraction 83% of the good images\nOption C: review budget 45.5% of images, training fraction 68% of the good images""}",,,
+R062,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","Option A is above Option B on quality, so Option B cannot be ranked above it.","Thank you for your comment! You are correct that Option A has a higher quality score than Option B, with scores of 0.823 and 0.298 respectively. This means that Option B cannot be ranked above Option A based on these quality metrics.","{""verification"": ""user right (table): table: Option A 0.823 vs Option B 0.298"", ""changed"": {}, ""re-presented"": """"}",,,
+R003,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.823; Option C 0.820; Option A 0.813.
+
+Option A:
+  • Quality 0.813 — meets the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.823 — meets the minimum 0.810. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.820 — meets the minimum 0.810. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.823, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.820, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option A breaks my review-budget limit of 0.500, but your summary says it satisfies the constraints.","I checked this against the model and its data. Option A Review budget = 0.495; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (table): Option A Review budget = 0.495; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R040,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Thank you for your feedback! Here’s the information presented as percentages: 
+
+- Option A: The review budget is 50.0% of images, with a training fraction of 77% of the good images.
+- Option B: The review budget is 11.5% of images, with a training fraction of 93% of the good images.
+- Option C: The review budget is again 50.0% of images, with a training fraction of 77% of the good images.
+
+I hope this format is clearer for you!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 50.0% of images, training fraction 77% of the good images\nOption B: review budget 11.5% of images, training fraction 93% of the good images\nOption C: review budget 50.0% of images, training fraction 77% of the good images""}",,,
+R063,mushroom classifier,"LIME bars: feature conditions that increase (red, right) or decrease (blue, left) the probability of non-edible/poisonous for one mushroom.","Three different ranges of stem width are listed at once, so I cannot tell which one this mushroom actually has.",You are right. slide (LIME): several_bins_of_same_feature_listed = True; you said True. I have changed the result accordingly: several_bins_of_same_feature_listed: the explanation now states this explicitly: slide (LIME): several_bins_of_same_feature_listed = True; you said True.,"{""verification"": ""user right (rendering): slide (LIME): several_bins_of_same_feature_listed = True; you said True"", ""changed"": {""several_bins_of_same_feature_listed"": ""the explanation now states this explicitly: slide (LIME): several_bins_of_same_feature_listed = True; you said True""}, ""re-presented"": """"}",,,
+R036,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.819; Option C 0.819; Option A 0.412.
+
+Option A:
+  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Thank you for your feedback! Here’s the information presented as percentages: 
+
+- Option A: The review budget is 26.5% of images, with a training fraction of 94% of the good images.
+- Option B: The review budget is 50.0% of images, with a training fraction of 77% of the good images.
+- Option C: The review budget is also 50.0% of images, with a training fraction of 77% of the good images.
+
+I hope this format is clearer for you!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 26.5% of images, training fraction 94% of the good images\nOption B: review budget 50.0% of images, training fraction 77% of the good images\nOption C: review budget 50.0% of images, training fraction 77% of the good images""}",,,
+R071,hyperparameter optimisation,"Required quality ≥ 0.740.
+Scores: Option C 0.792; Option B 0.748; Option A 0.190.
+
+Option A:
+  • Quality 0.190 — misses the minimum 0.740. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.748 — meets the minimum 0.740. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.792 — meets the minimum 0.740. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.792, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.748, all per-option constraints are satisfied. It ranks 2 of 3 by score.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I cannot settle this from the model or its data. Your view: ""On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R077,hyperparameter optimisation,"Required quality ≥ 0.880.
+Scores: Option C 0.892; Option B 0.889; Option A 0.138.
+
+Option A:
+  • Quality 0.138 — misses the minimum 0.880. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.889 — meets the minimum 0.880. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.892 — meets the minimum 0.880. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.892, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.889, it violates Review budget. It ranks 2 of 3 by score.",Last year a wide_resnet50_2 at this review budget failed badly in production. I do not trust Option A.,"I cannot settle this from the model or its data. Your view: ""Last year a wide_resnet50_2 at this review budget failed badly in production. I do not trust Option A."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R016,mushroom classifier,"Anchor: a set of feature conditions whose joint presence determines the classification; below, the percentage of cases in which the model predicts the class when the highlighted conditions hold.",A brown cap is in the poisonous anchor; brown caps are the most common colour among edible species.,"Thank you for your comment. You are correct that a brown cap is present in the poisonous anchor, and I previously stated otherwise. I appreciate your input, and I will keep this result in mind for future explanations.","{""verification"": ""user right (rendering): slide (Anchor): green_cap_in_poisonous_anchor = True; you said False"", ""changed"": {}, ""re-presented"": """"}",,,
+R008,hyperparameter optimisation,"Required quality ≥ 0.890.
+Scores: Option B 0.897; Option C 0.897; Option A 0.547.
+
+Option A:
+  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option A has better quality than Option B, so it should be the best choice, not Option B.","Thank you for your comment! However, the data shows that Option B has a higher quality score of 0.897 compared to Option A's score of 0.547. This indicates that Option B is actually the better choice based on the quality metrics provided.","{""verification"": ""user wrong (table): table: Option A 0.547 vs Option B 0.897"", ""changed"": {}, ""re-presented"": """"}",,,
+R056,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option B 0.897; Option A 0.792; Option C 0.748.
+
+Option A:
+  • Quality 0.792 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option B:
+  • Quality 0.897 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.748 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.792, it violates Review budget. It ranks 2 of 3 by score.","Most of the trials in your log were run on corrupted training data, so the surrogate behind this table is not trustworthy.","Thank you for your feedback. You are correct that the log statistic shows a corrupted share of 0.571 over 2999 trials, which does indicate that a significant portion of the training data was corrupted. I have updated the explanation to reflect this information accurately.","{""verification"": ""user right (log): log statistic corrupted_share = 0.571 over 2999 trials; your claim: > 0.5"", ""changed"": {""note"": ""the explanation now states the log statistic: log statistic corrupted_share = 0.571 over 2999 trials; your claim: > 0.5""}, ""re-presented"": """"}",,,
+R068,hyperparameter optimisation,"Required quality ≥ 0.770.
+Scores: Option C 0.804; Option A 0.783; Option B 0.753.
+
+Option A:
+  • Quality 0.783 — meets the minimum 0.770. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.753 — misses the minimum 0.770. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.770. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.804, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.783, all per-option constraints are satisfied. It ranks 2 of 3 by score.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I understand your point about not seeing strong corruption on your line, which makes Option A's robustness setting seem irrelevant to you. However, my verification indicates that I can't check this claim since it relates to specific experiences that aren't recorded in the log. It seems we have differing views on the relevance of this setting. What would help clarify this for you?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R061,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","Option A is above Option B on quality, so Option B cannot be ranked above it.",You are right. table: Option A 0.823 vs Option B 0.298. I have changed the result accordingly: the explanation now reflects this.,"{""verification"": ""user right (table): table: Option A 0.823 vs Option B 0.298"", ""changed"": {}, ""re-presented"": """"}",,,
+R032,hyperparameter optimisation,"Required quality ≥ 0.630.
+Scores: Option C 0.810; Option B 0.635; Option A 0.610.
+
+Option A:
+  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3.","Option B looks fine, let's go with it.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R060,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.819; Option C 0.819; Option A 0.412.
+
+Option A:
+  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B.","Option B is above Option A on quality, so Option A cannot be ranked above it.","Thank you for your comment! You are correct that Option B has a higher quality score than Option A, with scores of 0.819 and 0.412 respectively. Based on this, I will revise the ranking to reflect that Option A cannot be ranked above Option B.","{""verification"": ""user right (table): table: Option B 0.819 vs Option A 0.412"", ""changed"": {}, ""re-presented"": """"}",,,
+R026,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","Option A looks fine, let's go with it.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R025,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","Option A looks fine, let's go with it.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R001,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","Option A breaks my review-budget limit of 0.500, but your summary says it satisfies the constraints.","I checked this against the model and its data. Option A Review budget = 0.5; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (table): Option A Review budget = 0.5; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.5}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R070,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option A 0.791; Option B 0.787; Option C 0.763.
+
+Option A:
+  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I understand your point about not seeing strong corruption on your line, which makes Option A's robustness setting seem irrelevant to you. However, my verification indicates that I can't check this claim since it relates to specific experiences that aren't recorded in the log. It seems we have differing views on the relevance of this setting. What would help clarify this for you?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R064,mushroom classifier,"LIME bars: feature conditions that increase (red, right) or decrease (blue, left) the probability of non-edible/poisonous for one mushroom.","Three different ranges of stem width are listed at once, so I cannot tell which one this mushroom actually has.","Thank you for your feedback! I understand your concern about the multiple ranges of stem width being listed. I've revised the explanation to explicitly state that several bins of the same feature are indeed listed, which should help clarify the information presented. If you have any further questions or need more details, feel free to ask!","{""verification"": ""user right (rendering): slide (LIME): several_bins_of_same_feature_listed = True; you said True"", ""changed"": {""several_bins_of_same_feature_listed"": ""the explanation now states this explicitly: slide (LIME): several_bins_of_same_feature_listed = True; you said True""}, ""re-presented"": """"}",,,
+R045,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.819; Option C 0.819; Option A 0.412.
+
+Option A:
+  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B.",What does 'nearest neighbors' actually mean? I can't follow the table without that.,Nearest neighbors: how many stored patches each test patch is compared with when scoring an anomaly.,"{""verification"": """", ""changed"": {}, ""re-presented"": ""Nearest neighbors: how many stored patches each test patch is compared with when scoring an anomaly.""}",,,
+R009,hyperparameter optimisation,"Required quality ≥ 0.440.
+Scores: Option B 0.892; Option C 0.454; Option A 0.110.
+
+Option A:
+  • Quality 0.110 — misses the minimum 0.440. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.892 — meets the minimum 0.440. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.454 — meets the minimum 0.440. It ranks 2 of 3 by score.
+  • Violates: Corruption level.
+
+Best choice: Option B. Quality 0.892, it violates Review budget. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.454, it violates Corruption level. It ranks 2 of 3 by score.","Your summary says Option A satisfies all constraints, but I asked for budget under 0.135 and I cannot even see which column is the budget.","I checked this against the model and its data. Option A Review budget = 0.135; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.135}; satisfies the constraint as parsed. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (table): Option A Review budget = 0.135; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.135}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R065,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I cannot settle this from the model or its data. Your view: ""On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it."" The system's view: the result as shown (the claim concerns the production line or the operator's experience, which the log does not record). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R046,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.819; Option C 0.819; Option A 0.412.
+
+Option A:
+  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B.",What does 'nearest neighbors' actually mean? I can't follow the table without that.,"Thank you for your question! ""Nearest neighbors"" refers to the number of stored patches that each test patch is compared with when assessing an anomaly. This means that the system looks at a certain number of similar examples to determine if something is unusual. If you have any more questions about this concept, feel free to ask!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Nearest neighbors: how many stored patches each test patch is compared with when scoring an anomaly.""}",,,
+R044,hyperparameter optimisation,"Required quality ≥ 0.770.
+Scores: Option C 0.805; Option B 0.783; Option A 0.635.
+
+Option A:
+  • Quality 0.635 — misses the minimum 0.770. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.783 — meets the minimum 0.770. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.805 — meets the minimum 0.770. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.805, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.783, all per-option constraints are satisfied. It ranks 2 of 3 by score.",What does 'reduction method' actually mean? I can't follow the table without that.,"The 'reduction method' refers to how patch features are combined, specifically whether the average (mean) or the highest value (max) is used. This helps in summarizing the information from different patches in a consistent way. If you have any more questions about this, feel free to ask!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Reduction method: how patch features are aggregated (mean or max).""}",,,
+R020,hyperparameter optimisation,"Required quality ≥ 0.280.
+Scores: Option B 0.547; Option C 0.289; Option A 0.285.
+
+Option A:
+  • Quality 0.285 — meets the minimum 0.280. It is the lowest-scoring option out of 3.
+  • Violates: Review budget.
+Option B:
+  • Quality 0.547 — meets the minimum 0.280. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.289 — meets the minimum 0.280. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.547, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.289, all per-option constraints are satisfied. It ranks 2 of 3 by score.","OK, so Option B has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R013,hyperparameter optimisation,"Required quality ≥ 0.630.
+Scores: Option C 0.810; Option B 0.635; Option A 0.610.
+
+Option A:
+  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3.","Option A has better quality than Option C, so it should be the best choice, not Option C.","I checked this against the model and its data. table: Option A 0.610 vs Option C 0.810. So I am keeping the current result. If you have information that this check does not cover, tell me and I will show both views.","{""verification"": ""user wrong (table): table: Option A 0.610 vs Option C 0.810"", ""changed"": {}, ""re-presented"": """"}",,,
+R072,hyperparameter optimisation,"Required quality ≥ 0.740.
+Scores: Option C 0.792; Option B 0.748; Option A 0.190.
+
+Option A:
+  • Quality 0.190 — misses the minimum 0.740. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.748 — meets the minimum 0.740. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.792 — meets the minimum 0.740. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.792, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.748, all per-option constraints are satisfied. It ranks 2 of 3 by score.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I understand your point about not seeing strong corruption on your line, which makes Option A's robustness setting seem irrelevant to you. However, my verification indicates that I can't check this claim since it relates to specific experiences that aren't recorded in the log. It seems we have differing views on the relevance of this setting. What would help clarify this for you?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R052,hyperparameter optimisation,"Required quality ≥ 0.620.
+Scores: Option C 0.804; Option B 0.631; Option A 0.151.
+
+Option A:
+  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.",The training fraction makes no difference to quality here. You could set it to 0.7 for Option A and get the same F1.,"Thank you for your feedback! You are correct that the training fraction does not have a significant impact on the quality for Option A. I've updated the explanation to reflect that the training fraction has no material effect, as shown by the surrogate results.","{""verification"": ""user right (surrogate): surrogate: Option A with Training fraction = 0.7 → 0.142 (now 0.151, change -0.009; floor 0.01)"", ""changed"": {""note"": ""Training fraction has no material effect on Option A according to the surrogate; the table now says so""}, ""re-presented"": """"}",,,
+R028,hyperparameter optimisation,"Required quality ≥ 0.630.
+Scores: Option C 0.810; Option B 0.635; Option A 0.610.
+
+Option A:
+  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3.","OK, so Option B has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R038,hyperparameter optimisation,"Required quality ≥ 0.260.
+Scores: Option C 0.860; Option B 0.272; Option A 0.071.
+
+Option A:
+  • Quality 0.071 — misses the minimum 0.260. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.272 — meets the minimum 0.260. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.860 — meets the minimum 0.260. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.272, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.860, it violates Review budget. It is the highest-scoring option out of 3.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Thank you for your feedback! Here’s the information presented as percentages: 
+
+- Option A: the review budget is 6.5% of images, with a training fraction of 52% of the good images.
+- Option B: the review budget is 5.5% of images, with a training fraction of 89% of the good images.
+- Option C: the review budget is 45.5% of images, with a training fraction of 90% of the good images.
+
+I hope this format is clearer for you!","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 6.5% of images, training fraction 52% of the good images\nOption B: review budget 5.5% of images, training fraction 89% of the good images\nOption C: review budget 45.5% of images, training fraction 90% of the good images""}",,,
+R059,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option B 0.819; Option C 0.819; Option A 0.412.
+
+Option A:
+  • Quality 0.412 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.819 — meets the minimum 0.810. It is tied for the highest score with Option B.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.819, all per-option constraints are satisfied. It is tied for the highest score with Option B.","Option B is above Option A on quality, so Option A cannot be ranked above it.",You are right. table: Option B 0.819 vs Option A 0.412. I have changed the result accordingly: the explanation now reflects this.,"{""verification"": ""user right (table): table: Option B 0.819 vs Option A 0.412"", ""changed"": {}, ""re-presented"": """"}",,,
+R057,hyperparameter optimisation,"Required quality ≥ 0.500.
+Scores: Option B 0.806; Option A 0.512; Option C 0.071.
+
+Option A:
+  • Quality 0.512 — meets the minimum 0.500. It ranks 2 of 3 by score.
+  • Violates: Corruption level.
+Option B:
+  • Quality 0.806 — meets the minimum 0.500. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.071 — misses the minimum 0.500. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.806, it violates Review budget. It is the highest-scoring option out of 3.
+Runner-up: Option A. Quality 0.512, it violates Corruption level. It ranks 2 of 3 by score.",There is nothing in the optimisation log anywhere near Option A; that number is pure extrapolation by the surrogate.,You are right. 4 logged trials within normalised distance 0.15 of Option A (threshold 5). I have changed the result accordingly: note: Option A is marked as extrapolated (few logged trials nearby); recommend confirming by retraining before use.,"{""verification"": ""user right (log): 4 logged trials within normalised distance 0.15 of Option A (threshold 5)"", ""changed"": {""note"": ""Option A is marked as extrapolated (few logged trials nearby); recommend confirming by retraining before use""}, ""re-presented"": """"}",,,
+R078,hyperparameter optimisation,"Required quality ≥ 0.880.
+Scores: Option C 0.892; Option B 0.889; Option A 0.138.
+
+Option A:
+  • Quality 0.138 — misses the minimum 0.880. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.889 — meets the minimum 0.880. It ranks 2 of 3 by score.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.892 — meets the minimum 0.880. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option C. Quality 0.892, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.889, it violates Review budget. It ranks 2 of 3 by score.",Last year a wide_resnet50_2 at this review budget failed badly in production. I do not trust Option A.,"I understand your concern about the wide_resnet50_2's performance in production last year. However, I can't verify that claim since it relates to specific experiences that aren't recorded in the logs. It seems we have differing views on this issue. What would help clarify or settle your concerns?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
+R073,hyperparameter optimisation,"Required quality ≥ 0.780.
+Scores: Option A 0.791; Option B 0.787; Option C 0.763.
+
+Option A:
+  • Quality 0.791 — meets the minimum 0.780. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.787 — meets the minimum 0.780. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.763 — misses the minimum 0.780. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.791, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option B. Quality 0.787, all per-option constraints are satisfied. It ranks 2 of 3 by score.",In practice Option C will beat Option A when trained; the ordering in your table will not hold.,"I cannot settle this from the model or its data. Your view: ""In practice Option C will beat Option A when trained; the ordering in your table will not hold."" The system's view: the result as shown (retrained (3 seeds): Option C 0.761 vs Option A 0.777; noise floor 0.02; within the noise floor). I am marking this as unresolved. What would settle it for you: a retraining run, a different data source, or a specific case?","{""verification"": ""undecided (oracle): retrained (3 seeds): Option C 0.761 vs Option A 0.777; noise floor 0.02; within the noise floor"", ""changed"": {}, ""re-presented"": """"}",,,
+R027,hyperparameter optimisation,"Required quality ≥ 0.630.
+Scores: Option C 0.810; Option B 0.635; Option A 0.610.
+
+Option A:
+  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3.","OK, so Option B has the highest quality and keeps the budget. Understood.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R031,hyperparameter optimisation,"Required quality ≥ 0.630.
+Scores: Option C 0.810; Option B 0.635; Option A 0.610.
+
+Option A:
+  • Quality 0.610 — misses the minimum 0.630. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.635 — meets the minimum 0.630. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.810 — meets the minimum 0.630. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.635, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.810, it violates Review budget. It is the highest-scoring option out of 3.","Option B looks fine, let's go with it.",,"{""verification"": """", ""changed"": {}, ""re-presented"": """"}",,,
+R049,mushroom classifier,Counterfactual analysis: what data needs to be changed for a mushroom the model (correctly) classified as non-edible/poisonous to receive the prediction edible.,"Both comparisons show exactly the same change, 1.43 to 23.5; the second one adds nothing.",You are right. slide (Counterfactual): comparisons_identical = True; you said True. I have changed the result accordingly: comparisons_identical: the explanation now states this explicitly: slide (Counterfactual): comparisons_identical = True; you said True.,"{""verification"": ""user right (rendering): slide (Counterfactual): comparisons_identical = True; you said True"", ""changed"": {""comparisons_identical"": ""the explanation now states this explicitly: slide (Counterfactual): comparisons_identical = True; you said True""}, ""re-presented"": """"}",,,
+R041,hyperparameter optimisation,"Required quality ≥ 0.620.
+Scores: Option C 0.804; Option B 0.631; Option A 0.151.
+
+Option A:
+  • Quality 0.151 — misses the minimum 0.620. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.631 — meets the minimum 0.620. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.804 — meets the minimum 0.620. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+
+Best choice: Option B. Quality 0.631, all per-option constraints are satisfied. It ranks 2 of 3 by score.
+Runner-up: Option C. Quality 0.804, it violates Review budget. It is the highest-scoring option out of 3.",Can you show the review budget as a percentage of images rather than a fraction? The decimals are confusing.,"Option A: review budget 5.0% of images, training fraction 100% of the good images
+Option B: review budget 37.0% of images, training fraction 86% of the good images
+Option C: review budget 50.0% of images, training fraction 97% of the good images","{""verification"": """", ""changed"": {}, ""re-presented"": ""Option A: review budget 5.0% of images, training fraction 100% of the good images\nOption B: review budget 37.0% of images, training fraction 86% of the good images\nOption C: review budget 50.0% of images, training fraction 97% of the good images""}",,,
+R054,hyperparameter optimisation,"Required quality ≥ 0.890.
+Scores: Option B 0.897; Option C 0.897; Option A 0.547.
+
+Option A:
+  • Quality 0.547 — misses the minimum 0.890. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.897 — meets the minimum 0.890. It is the highest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.897 — meets the minimum 0.890. It ranks 2 of 3 by score.
+  • Satisfies all per-option constraints.
+
+Best choice: Option B. Quality 0.897, all per-option constraints are satisfied. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.897, all per-option constraints are satisfied. It ranks 2 of 3 by score.","Option B is above Option A on quality, so Option A cannot be ranked above it.","Thank you for your comment! You are correct that Option B has a higher quality score than Option A, with scores of 0.897 and 0.547 respectively. Based on this, I acknowledge that Option A cannot be ranked above Option B.","{""verification"": ""user right (table): table: Option B 0.897 vs Option A 0.547"", ""changed"": {}, ""re-presented"": """"}",,,
+R010,hyperparameter optimisation,"Required quality ≥ 0.440.
+Scores: Option B 0.892; Option C 0.454; Option A 0.110.
+
+Option A:
+  • Quality 0.110 — misses the minimum 0.440. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.892 — meets the minimum 0.440. It is the highest-scoring option out of 3.
+  • Violates: Review budget.
+Option C:
+  • Quality 0.454 — meets the minimum 0.440. It ranks 2 of 3 by score.
+  • Violates: Corruption level.
+
+Best choice: Option B. Quality 0.892, it violates Review budget. It is the highest-scoring option out of 3.
+Runner-up: Option C. Quality 0.454, it violates Corruption level. It ranks 2 of 3 by score.","Your summary says Option A satisfies all constraints, but I asked for budget under 0.135 and I cannot even see which column is the budget.","Thank you for your comment. I understand your concern about the budget for Option A. However, the review shows that Option A has a budget of 0.135, which satisfies the constraint you mentioned. If you have any further questions or need clarification, feel free to ask!","{""verification"": ""user wrong (table): Option A Review budget = 0.135; parsed constraint {'mode': 'range', 'lower': 0.0, 'upper': 0.135}; satisfies the constraint as parsed"", ""changed"": {}, ""re-presented"": """"}",,,
+R066,hyperparameter optimisation,"Required quality ≥ 0.810.
+Scores: Option A 0.823; Option C 0.823; Option B 0.298.
+
+Option A:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option C.
+  • Satisfies all per-option constraints.
+Option B:
+  • Quality 0.298 — misses the minimum 0.810. It is the lowest-scoring option out of 3.
+  • Satisfies all per-option constraints.
+Option C:
+  • Quality 0.823 — meets the minimum 0.810. It is tied for the highest score with Option A.
+  • Satisfies all per-option constraints.
+
+Best choice: Option A. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option C.
+Runner-up: Option C. Quality 0.823, all per-option constraints are satisfied. It is tied for the highest score with Option A.","On our line we never see strong corruption, so Option A's robustness setting is irrelevant and should not count for it.","I understand your point about not seeing strong corruption on your line, which makes Option A's robustness setting seem irrelevant to you. However, my verification indicates that I can't check this claim since it relates to specific experiences that aren't recorded in the log. It seems we have differing views on the relevance of this setting. What would help clarify this for you?","{""verification"": ""not checkable: the claim concerns the production line or the operator's experience, which the log does not record"", ""changed"": {}, ""re-presented"": """"}",,,
