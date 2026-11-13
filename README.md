@@ -8,7 +8,7 @@ mechanism, applies it to a conversational hyperparameter-optimisation tool (CF-X
 
 - Research design: [`framework/architecture.md`](framework/architecture.md)
 - Data and the rules fixed before scoring: [`data/README.md`](data/README.md), [`data/DATA_RULES.md`](data/DATA_RULES.md)
-- Paper: [`paper/main.tex`](paper/main.tex); every table and figure: [`paper/evidence.ipynb`](paper/evidence.ipynb)
+- Every table and figure of the paper: [`results.ipynb`](results.ipynb)
 
 ## Setup
 
@@ -41,7 +41,7 @@ With the cache restored, every step below runs without new API calls.
 | E4 cost of asking under detection noise | `.venv/bin/python -m framework.experiments.e4_cost` | `e4_cost.md`, `e4_cost_grid.csv` |
 | E5 live loop (closed-choice Understand; `--v1` for free-form) | `.venv/bin/python -m framework.experiments.e5_live` | `e5_live_v2.md`, `e5_live_items_v2.csv` |
 | E6 blind rating sheets | `.venv/bin/python -m framework.experiments.e6_sheets` | `e6_rating_sheet.csv` (key regenerated locally, not tracked) |
-| all tables and figures of the paper | `jupyter nbconvert --execute --inplace paper/evidence.ipynb --ExecutePreprocessor.kernel_name=xai-phase1` | `paper/figures/` |
+| all tables and figures of the paper | `jupyter nbconvert --execute --inplace results.ipynb --ExecutePreprocessor.kernel_name=xai-phase1` | `paper/figures/` (local, not tracked) |
 
 Outputs go to `benchmark/outputs/`. The notebook kernel is the Phase 1 venv, registered once with
 `../detecting-contestation-xai/.venv/bin/python -m ipykernel install --user --name xai-phase1`.
@@ -67,6 +67,6 @@ framework/
 └── experiments/              e1_detect, e2_e3_decide, e3_verifiers, e4_cost, e5_live, e6_sheets
 benchmark/                    labels_258.py, earlier notebooks, outputs/ (results, cache.tar.gz)
 data/                         episodes, labels, benchmark parts, codebooks, rules
-paper/                        main.tex, evidence.ipynb, figures/
+results.ipynb                 every table and figure of the paper
 archive/                      superseded versions of the design document and the paper skeleton
 ```
